@@ -19,12 +19,31 @@ namespace OpenGL
         #region Constructor
         static Gl()
         {
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), LibraryImporterResolver);
+
             delegatesClass = typeof(Gl.Delegates);
             coreClass = typeof(Gl.NativeMethods);
             // 'Touch' Imports class to force initialization. We don't want anything yet, just to have
             // this class ready.
             if (Core.FunctionMap != null) { }
             ReloadFunctions();
+        }
+
+        public static IntPtr LibraryImporterResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+        {
+            // if (libraryName == "opengl")
+            if (libraryName == "opengl32.dll")
+            {
+                // On Linux load a different library
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                    return NativeLibrary.Load("libGL.so.1", assembly, searchPath);
+
+                //if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                //    return NativeLibrary.Load("opengl32.dll", assembly, searchPath);
+            }
+
+            // Fallback to default importer resolver
+            return IntPtr.Zero;
         }
         #endregion
 
