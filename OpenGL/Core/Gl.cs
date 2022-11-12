@@ -245,7 +245,7 @@ namespace OpenGL
         /// glBindAttribLocation is used to associate a user-defined attribute variable in the program object
         /// specified by program with a generic vertex attribute index. The name of the user-defined attribute
         /// variable is passed as a null terminated string in name. The generic vertex attribute index to be
-        /// bound to this variable is specified by index. When program is made part of current state, values
+        /// bound to this variable is specified by index. When program is made part of current state, out values
         /// provided via the generic vertex attribute index will modify the value of the user-defined attribute
         /// variable specified by name.
         /// </para>
@@ -271,7 +271,7 @@ namespace OpenGL
         /// glBindAttribLocation is used to associate a user-defined attribute variable in the program object
         /// specified by program with a generic vertex attribute index. The name of the user-defined attribute
         /// variable is passed as a null terminated string in name. The generic vertex attribute index to be
-        /// bound to this variable is specified by index. When program is made part of current state, values
+        /// bound to this variable is specified by index. When program is made part of current state, out values
         /// provided via the generic vertex attribute index will modify the value of the user-defined attribute
         /// variable specified by name.
         /// </para>
@@ -1292,7 +1292,7 @@ namespace OpenGL
         /// buffer object currently bound to target will be initialized. For glNamedBufferStorage, buffer is the
         /// name of the buffer object that will be configured. The size of the data store is specified by size.
         /// If an initial data is available, its address may be supplied in data. Otherwise, to create an
-        /// uninitialized data store, data should be NULL.
+        /// uninitialized data store, out data should be NULL.
         /// </para>
         /// </summary>
         /// <param name="target">
@@ -1330,7 +1330,7 @@ namespace OpenGL
         /// buffer object currently bound to target will be initialized. For glNamedBufferStorage, buffer is the
         /// name of the buffer object that will be configured. The size of the data store is specified by size.
         /// If an initial data is available, its address may be supplied in data. Otherwise, to create an
-        /// uninitialized data store, data should be NULL.
+        /// uninitialized data store, out data should be NULL.
         /// </para>
         /// </summary>
         /// <param name="buffer">
@@ -4849,9 +4849,9 @@ namespace OpenGL
         /// <param name="buffers">
         /// Specifies an array in which the generated buffer object names are stored.
         /// </param>
-        public static void GenBuffers(Int32 n, [OutAttribute] UInt32[] buffers)
+        public static void GenBuffers(Int32 n, out UInt32[] buffers)
         {
-            Delegates.glGenBuffers(n, buffers);
+            Delegates.glGenBuffers(n, out buffers);
         }
 
         /// <summary>
@@ -4902,9 +4902,9 @@ namespace OpenGL
         /// <param name="ids">
         /// Specifies an array in which the generated framebuffer object names are stored.
         /// </param>
-        public static void GenFramebuffers(Int32 n, [OutAttribute] UInt32[] ids)
+        public static void GenFramebuffers(Int32 n, out UInt32[] ids)
         {
-            Delegates.glGenFramebuffers(n, ids);
+            Delegates.glGenFramebuffers(n, out ids);
         }
 
         /// <summary>
@@ -4921,9 +4921,9 @@ namespace OpenGL
         /// <param name="pipelines">
         /// Specifies an array of into which the reserved names will be written.
         /// </param>
-        public static void GenProgramPipelines(Int32 n, [OutAttribute] UInt32[] pipelines)
+        public static void GenProgramPipelines(Int32 n, out UInt32[] pipelines)
         {
-            Delegates.glGenProgramPipelines(n, pipelines);
+            Delegates.glGenProgramPipelines(n, out pipelines);
         }
 
         /// <summary>
@@ -4940,9 +4940,9 @@ namespace OpenGL
         /// <param name="ids">
         /// Specifies an array in which the generated query object names are stored.
         /// </param>
-        public static void GenQueries(Int32 n, [OutAttribute] UInt32[] ids)
+        public static void GenQueries(Int32 n, out UInt32[] ids)
         {
-            Delegates.glGenQueries(n, ids);
+            Delegates.glGenQueries(n, out ids);
         }
 
         /// <summary>
@@ -4959,9 +4959,9 @@ namespace OpenGL
         /// <param name="renderbuffers">
         /// Specifies an array in which the generated renderbuffer object names are stored.
         /// </param>
-        public static void GenRenderbuffers(Int32 n, [OutAttribute] UInt32[] renderbuffers)
+        public static void GenRenderbuffers(Int32 n, out UInt32[] renderbuffers)
         {
-            Delegates.glGenRenderbuffers(n, renderbuffers);
+            Delegates.glGenRenderbuffers(n, out renderbuffers);
         }
 
         /// <summary>
@@ -4978,9 +4978,9 @@ namespace OpenGL
         /// <param name="samplers">
         /// Specifies an array in which the generated sampler object names are stored.
         /// </param>
-        public static void GenSamplers(Int32 n, [OutAttribute] UInt32[] samplers)
+        public static void GenSamplers(Int32 n, out UInt32[] samplers)
         {
-            Delegates.glGenSamplers(n, samplers);
+            Delegates.glGenSamplers(n, out samplers);
         }
 
         /// <summary>
@@ -4997,9 +4997,9 @@ namespace OpenGL
         /// <param name="textures">
         /// Specifies an array in which the generated texture names are stored.
         /// </param>
-        public static void GenTextures(Int32 n, [OutAttribute] UInt32[] textures)
+        public static void GenTextures(Int32 n, out UInt32[] textures)
         {
-            Delegates.glGenTextures(n, textures);
+            Delegates.glGenTextures(n, out textures);
         }
 
         /// <summary>
@@ -5016,9 +5016,9 @@ namespace OpenGL
         /// <param name="ids">
         /// Specifies an array of into which the reserved names will be written.
         /// </param>
-        public static void GenTransformFeedbacks(Int32 n, [OutAttribute] UInt32[] ids)
+        public static void GenTransformFeedbacks(Int32 n, out UInt32[] ids)
         {
-            Delegates.glGenTransformFeedbacks(n, ids);
+            Delegates.glGenTransformFeedbacks(n, out ids);
         }
 
         /// <summary>
@@ -5035,9 +5035,9 @@ namespace OpenGL
         /// <param name="arrays">
         /// Specifies an array in which the generated vertex array object names are stored.
         /// </param>
-        public static void GenVertexArrays(Int32 n, [OutAttribute] UInt32[] arrays)
+        public static void GenVertexArrays(Int32 n, out UInt32[] arrays)
         {
-            Delegates.glGenVertexArrays(n, arrays);
+            Delegates.glGenVertexArrays(n, out arrays);
         }
 
         /// <summary>
@@ -5055,9 +5055,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetBooleanv(OpenGL.GetPName pname, [OutAttribute] Boolean[] data)
+        public static void GetBooleanv(OpenGL.GetPName pname, ref Boolean data)
         {
-            Delegates.glGetBooleanv(pname, data);
+            Delegates.glGetBooleanv(pname, ref data);
         }
 
         /// <summary>
@@ -5075,9 +5075,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetDoublev(OpenGL.GetPName pname, [OutAttribute] Double[] data)
+        public static void GetDoublev(OpenGL.GetPName pname, ref Double data)
         {
-            Delegates.glGetDoublev(pname, data);
+            Delegates.glGetDoublev(pname, ref data);
         }
 
         /// <summary>
@@ -5095,9 +5095,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetFloatv(OpenGL.GetPName pname, [OutAttribute] Single[] data)
+        public static void GetFloatv(OpenGL.GetPName pname, ref Single data)
         {
-            Delegates.glGetFloatv(pname, data);
+            Delegates.glGetFloatv(pname, ref data);
         }
 
         /// <summary>
@@ -5115,9 +5115,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetIntegerv(OpenGL.GetPName pname, [OutAttribute] Int32[] data)
+        public static void GetIntegerv(OpenGL.GetPName pname, ref Int32 data)
         {
-            Delegates.glGetIntegerv(pname, data);
+            Delegates.glGetIntegerv(pname, ref data);
         }
 
         /// <summary>
@@ -5135,9 +5135,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetInteger64v(OpenGL.ArbSync pname, [OutAttribute] Int64[] data)
+        public static void GetInteger64v(OpenGL.ArbSync pname, ref Int64 data)
         {
-            Delegates.glGetInteger64v(pname, data);
+            Delegates.glGetInteger64v(pname, ref data);
         }
 
         /// <summary>
@@ -5158,9 +5158,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetBooleani_v(OpenGL.GetPName target, UInt32 index, [OutAttribute] Boolean[] data)
+        public static void GetBooleani_v(OpenGL.GetPName target, UInt32 index, ref Boolean data)
         {
-            Delegates.glGetBooleani_v(target, index, data);
+            Delegates.glGetBooleani_v(target, index, ref data);
         }
 
         /// <summary>
@@ -5181,9 +5181,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetIntegeri_v(OpenGL.GetPName target, UInt32 index, [OutAttribute] Int32[] data)
+        public static void GetIntegeri_v(OpenGL.GetPName target, UInt32 index, ref Int32 data)
         {
-            Delegates.glGetIntegeri_v(target, index, data);
+            Delegates.glGetIntegeri_v(target, index, ref data);
         }
 
         /// <summary>
@@ -5204,9 +5204,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetFloati_v(OpenGL.GetPName target, UInt32 index, [OutAttribute] Single[] data)
+        public static void GetFloati_v(OpenGL.GetPName target, UInt32 index, ref Single data)
         {
-            Delegates.glGetFloati_v(target, index, data);
+            Delegates.glGetFloati_v(target, index, ref data);
         }
 
         /// <summary>
@@ -5227,9 +5227,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetDoublei_v(OpenGL.GetPName target, UInt32 index, [OutAttribute] Double[] data)
+        public static void GetDoublei_v(OpenGL.GetPName target, UInt32 index, ref Double data)
         {
-            Delegates.glGetDoublei_v(target, index, data);
+            Delegates.glGetDoublei_v(target, index, ref data);
         }
 
         /// <summary>
@@ -5250,9 +5250,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the value or values of the specified parameter.
         /// </param>
-        public static void GetInteger64i_v(OpenGL.GetPName target, UInt32 index, [OutAttribute] Int64[] data)
+        public static void GetInteger64i_v(OpenGL.GetPName target, UInt32 index, ref Int64 data)
         {
-            Delegates.glGetInteger64i_v(target, index, data);
+            Delegates.glGetInteger64i_v(target, index, ref data);
         }
 
         /// <summary>
@@ -5277,9 +5277,9 @@ namespace OpenGL
         /// <param name="params">
         /// Specifies the address of a variable into which to write the retrieved information.
         /// </param>
-        public static void GetActiveAtomicCounterBufferiv(UInt32 program, UInt32 bufferIndex, OpenGL.AtomicCounterParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetActiveAtomicCounterBufferiv(UInt32 program, UInt32 bufferIndex, OpenGL.AtomicCounterParameterName pname, ref Int32 @params)
         {
-            Delegates.glGetActiveAtomicCounterBufferiv(program, bufferIndex, pname, @params);
+            Delegates.glGetActiveAtomicCounterBufferiv(program, bufferIndex, pname, ref @params);
         }
 
         /// <summary>
@@ -5314,9 +5314,9 @@ namespace OpenGL
         /// <param name="name">
         /// Returns a null terminated string containing the name of the attribute variable.
         /// </param>
-        public static void GetActiveAttrib(UInt32 program, UInt32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] size, [OutAttribute] OpenGL.ActiveAttribType[] type, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveAttrib(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, out String name)
         {
-            Delegates.glGetActiveAttrib(program, index, bufSize, length, size, type, name);
+            Delegates.glGetActiveAttrib(program, index, bufSize, ref length, ref size, ref type, out name);
         }
 
         /// <summary>
@@ -5351,10 +5351,10 @@ namespace OpenGL
         /// <param name="name">
         /// Returns a null terminated string containing the name of the attribute variable.
         /// </param>
-        public static void GetActiveAttrib(UInt32 program, Int32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] size, [OutAttribute] OpenGL.ActiveAttribType[] type, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveAttrib(UInt32 program, Int32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, out String name)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetActiveAttrib(program, (UInt32)index, bufSize, length, size, type, name);
+            Delegates.glGetActiveAttrib(program, (UInt32)index, bufSize, ref length, ref size, ref type, out name);
         }
 
         /// <summary>
@@ -5386,9 +5386,9 @@ namespace OpenGL
         /// Specifies the address of an array into which the name of the shader subroutine uniform will be
         /// written.
         /// </param>
-        public static void GetActiveSubroutineName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveSubroutineName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, out String name)
         {
-            Delegates.glGetActiveSubroutineName(program, shadertype, index, bufsize, length, name);
+            Delegates.glGetActiveSubroutineName(program, shadertype, index, bufsize, ref length, out name);
         }
 
         /// <summary>
@@ -5418,9 +5418,9 @@ namespace OpenGL
         /// <param name="values">
         /// Specifies the address of a into which the queried value or values will be placed.
         /// </param>
-        public static void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, OpenGL.SubroutineParameterName pname, [OutAttribute] Int32[] values)
+        public static void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, OpenGL.SubroutineParameterName pname, ref Int32 values)
         {
-            Delegates.glGetActiveSubroutineUniformiv(program, shadertype, index, pname, values);
+            Delegates.glGetActiveSubroutineUniformiv(program, shadertype, index, pname, ref values);
         }
 
         /// <summary>
@@ -5450,10 +5450,10 @@ namespace OpenGL
         /// <param name="values">
         /// Specifies the address of a into which the queried value or values will be placed.
         /// </param>
-        public static void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, Int32 index, OpenGL.SubroutineParameterName pname, [OutAttribute] Int32[] values)
+        public static void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, Int32 index, OpenGL.SubroutineParameterName pname, ref Int32 values)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetActiveSubroutineUniformiv(program, shadertype, (UInt32)index, pname, values);
+            Delegates.glGetActiveSubroutineUniformiv(program, shadertype, (UInt32)index, pname, ref values);
         }
 
         /// <summary>
@@ -5487,9 +5487,9 @@ namespace OpenGL
         /// Specifies the address of a buffer that will receive the name of the specified shader subroutine
         /// uniform.
         /// </param>
-        public static void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, out String name)
         {
-            Delegates.glGetActiveSubroutineUniformName(program, shadertype, index, bufsize, length, name);
+            Delegates.glGetActiveSubroutineUniformName(program, shadertype, index, bufsize, ref length, out name);
         }
 
         /// <summary>
@@ -5523,10 +5523,10 @@ namespace OpenGL
         /// Specifies the address of a buffer that will receive the name of the specified shader subroutine
         /// uniform.
         /// </param>
-        public static void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, Int32 index, Int32 bufsize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, Int32 index, Int32 bufsize, ref Int32 length, out String name)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetActiveSubroutineUniformName(program, shadertype, (UInt32)index, bufsize, length, name);
+            Delegates.glGetActiveSubroutineUniformName(program, shadertype, (UInt32)index, bufsize, ref length, out name);
         }
 
         /// <summary>
@@ -5561,9 +5561,9 @@ namespace OpenGL
         /// <param name="name">
         /// Returns a null terminated string containing the name of the uniform variable.
         /// </param>
-        public static void GetActiveUniform(UInt32 program, UInt32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] size, [OutAttribute] OpenGL.ActiveUniformType[] type, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveUniform(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveUniformType type, out String name)
         {
-            Delegates.glGetActiveUniform(program, index, bufSize, length, size, type, name);
+            Delegates.glGetActiveUniform(program, index, bufSize, ref length, ref size, ref type, out name);
         }
 
         /// <summary>
@@ -5598,10 +5598,10 @@ namespace OpenGL
         /// <param name="name">
         /// Returns a null terminated string containing the name of the uniform variable.
         /// </param>
-        public static void GetActiveUniform(UInt32 program, Int32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] size, [OutAttribute] OpenGL.ActiveUniformType[] type, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetActiveUniform(UInt32 program, Int32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveUniformType type, out String name)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetActiveUniform(program, (UInt32)index, bufSize, length, size, type, name);
+            Delegates.glGetActiveUniform(program, (UInt32)index, bufSize, ref length, ref size, ref type, out name);
         }
 
         /// <summary>
@@ -5622,9 +5622,9 @@ namespace OpenGL
         /// <param name="params">
         /// Specifies the address of a variable to receive the result of the query.
         /// </param>
-        public static void GetActiveUniformBlockiv(UInt32 program, UInt32 uniformBlockIndex, OpenGL.ActiveUniformBlockParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetActiveUniformBlockiv(UInt32 program, UInt32 uniformBlockIndex, OpenGL.ActiveUniformBlockParameter pname, ref Int32 @params)
         {
-            Delegates.glGetActiveUniformBlockiv(program, uniformBlockIndex, pname, @params);
+            Delegates.glGetActiveUniformBlockiv(program, uniformBlockIndex, pname, ref @params);
         }
 
         /// <summary>
@@ -5651,9 +5651,9 @@ namespace OpenGL
         /// Specifies the address an array of characters to receive the name of the uniform block at
         /// uniformBlockIndex.
         /// </param>
-        public static void GetActiveUniformBlockName(UInt32 program, UInt32 uniformBlockIndex, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder uniformBlockName)
+        public static void GetActiveUniformBlockName(UInt32 program, UInt32 uniformBlockIndex, Int32 bufSize, ref Int32 length, out String uniformBlockName)
         {
-            Delegates.glGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
+            Delegates.glGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, ref length, out uniformBlockName);
         }
 
         /// <summary>
@@ -5686,9 +5686,9 @@ namespace OpenGL
         /// Specifies the address of a buffer into which the GL will place the name of the active uniform at
         /// uniformIndex within program.
         /// </param>
-        public static void GetActiveUniformName(UInt32 program, UInt32 uniformIndex, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder uniformName)
+        public static void GetActiveUniformName(UInt32 program, UInt32 uniformIndex, Int32 bufSize, ref Int32 length, out String uniformName)
         {
-            Delegates.glGetActiveUniformName(program, uniformIndex, bufSize, length, uniformName);
+            Delegates.glGetActiveUniformName(program, uniformIndex, bufSize, ref length, out uniformName);
         }
 
         /// <summary>
@@ -5720,9 +5720,9 @@ namespace OpenGL
         /// Specifies the address of an array of uniformCount integers which are to receive the value of pname
         /// for each uniform in uniformIndices.
         /// </param>
-        public static void GetActiveUniformsiv(UInt32 program, Int32 uniformCount, [OutAttribute] UInt32[] uniformIndices, OpenGL.ActiveUniformType pname, [OutAttribute] Int32[] @params)
+        public static void GetActiveUniformsiv(UInt32 program, Int32 uniformCount, out UInt32[] uniformIndices, OpenGL.ActiveUniformType pname, out Int32[] @params)
         {
-            Delegates.glGetActiveUniformsiv(program, uniformCount, uniformIndices, pname, @params);
+            Delegates.glGetActiveUniformsiv(program, uniformCount, out uniformIndices, pname, out @params);
         }
 
         /// <summary>
@@ -5747,9 +5747,9 @@ namespace OpenGL
         /// <param name="shaders">
         /// Specifies an array that is used to return the names of attached shader objects.
         /// </param>
-        public static void GetAttachedShaders(UInt32 program, Int32 maxCount, [OutAttribute] Int32[] count, [OutAttribute] UInt32[] shaders)
+        public static void GetAttachedShaders(UInt32 program, Int32 maxCount, ref Int32 count, out UInt32[] shaders)
         {
-            Delegates.glGetAttachedShaders(program, maxCount, count, shaders);
+            Delegates.glGetAttachedShaders(program, maxCount, ref count, out shaders);
         }
 
         /// <summary>
@@ -5798,9 +5798,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the requested parameter.
         /// </param>
-        public static void GetBufferParameteriv(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, [OutAttribute] Int32[] data)
+        public static void GetBufferParameteriv(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int32 data)
         {
-            Delegates.glGetBufferParameteriv(target, value, data);
+            Delegates.glGetBufferParameteriv(target, value, out data);
         }
 
         /// <summary>
@@ -5826,9 +5826,9 @@ namespace OpenGL
         /// <param name="data">
         /// Returns the requested parameter.
         /// </param>
-        public static void GetBufferParameteri64v(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, [OutAttribute] Int64[] data)
+        public static void GetBufferParameteri64v(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int64 data)
         {
-            Delegates.glGetBufferParameteri64v(target, value, data);
+            Delegates.glGetBufferParameteri64v(target, value, out data);
         }
 
         /// <summary>
@@ -5845,9 +5845,9 @@ namespace OpenGL
         /// </param>
         /// <param name="params">
         /// </param>
-        public static void GetNamedBufferParameteriv(UInt32 buffer, OpenGL.BufferParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetNamedBufferParameteriv(UInt32 buffer, OpenGL.BufferParameterName pname, out Int32 @params)
         {
-            Delegates.glGetNamedBufferParameteriv(buffer, pname, @params);
+            Delegates.glGetNamedBufferParameteriv(buffer, pname, out @params);
         }
 
         /// <summary>
@@ -5864,9 +5864,9 @@ namespace OpenGL
         /// </param>
         /// <param name="params">
         /// </param>
-        public static void GetNamedBufferParameteri64v(UInt32 buffer, OpenGL.BufferParameterName pname, [OutAttribute] Int64[] @params)
+        public static void GetNamedBufferParameteri64v(UInt32 buffer, OpenGL.BufferParameterName pname, out Int64 @params)
         {
-            Delegates.glGetNamedBufferParameteri64v(buffer, pname, @params);
+            Delegates.glGetNamedBufferParameteri64v(buffer, pname, out @params);
         }
 
         /// <summary>
@@ -5896,9 +5896,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the pointer value specified by pname.
         /// </param>
-        public static void GetBufferPointerv(OpenGL.BufferTarget target, OpenGL.BufferPointer pname, [OutAttribute] IntPtr @params)
+        public static void GetBufferPointerv(OpenGL.BufferTarget target, OpenGL.BufferPointer pname, out IntPtr @params)
         {
-            Delegates.glGetBufferPointerv(target, pname, @params);
+            Delegates.glGetBufferPointerv(target, pname, out @params);
         }
 
         /// <summary>
@@ -5920,9 +5920,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the pointer value specified by pname.
         /// </param>
-        public static void GetNamedBufferPointerv(UInt32 buffer, OpenGL.BufferPointer pname, [OutAttribute] IntPtr @params)
+        public static void GetNamedBufferPointerv(UInt32 buffer, OpenGL.BufferPointer pname, out IntPtr @params)
         {
-            Delegates.glGetNamedBufferPointerv(buffer, pname, @params);
+            Delegates.glGetNamedBufferPointerv(buffer, pname, out @params);
         }
 
         /// <summary>
@@ -5956,9 +5956,9 @@ namespace OpenGL
         /// <param name="data">
         /// Specifies a pointer to the location where buffer object data is returned.
         /// </param>
-        public static void GetBufferSubData(OpenGL.BufferTarget target, IntPtr offset, IntPtr size, [OutAttribute] IntPtr data)
+        public static void GetBufferSubData(OpenGL.BufferTarget target, IntPtr offset, IntPtr size, out IntPtr data)
         {
-            Delegates.glGetBufferSubData(target, offset, size, data);
+            Delegates.glGetBufferSubData(target, offset, size, out data);
         }
 
         /// <summary>
@@ -5984,9 +5984,9 @@ namespace OpenGL
         /// <param name="data">
         /// Specifies a pointer to the location where buffer object data is returned.
         /// </param>
-        public static void GetNamedBufferSubData(UInt32 buffer, IntPtr offset, Int32 size, [OutAttribute] IntPtr data)
+        public static void GetNamedBufferSubData(UInt32 buffer, IntPtr offset, Int32 size, out IntPtr data)
         {
-            Delegates.glGetNamedBufferSubData(buffer, offset, size, data);
+            Delegates.glGetNamedBufferSubData(buffer, offset, size, out data);
         }
 
         /// <summary>
@@ -6017,9 +6017,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the compressed texture image.
         /// </param>
-        public static void GetCompressedTexImage(OpenGL.TextureTarget target, Int32 level, [OutAttribute] IntPtr pixels)
+        public static void GetCompressedTexImage(OpenGL.TextureTarget target, Int32 level, out IntPtr pixels)
         {
-            Delegates.glGetCompressedTexImage(target, level, pixels);
+            Delegates.glGetCompressedTexImage(target, level, out pixels);
         }
 
         /// <summary>
@@ -6054,9 +6054,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the compressed texture image.
         /// </param>
-        public static void GetnCompressedTexImage(OpenGL.TextureTarget target, Int32 level, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetnCompressedTexImage(OpenGL.TextureTarget target, Int32 level, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetnCompressedTexImage(target, level, bufSize, pixels);
+            Delegates.glGetnCompressedTexImage(target, level, bufSize, out pixels);
         }
 
         /// <summary>
@@ -6086,9 +6086,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the compressed texture image.
         /// </param>
-        public static void GetCompressedTextureImage(UInt32 texture, Int32 level, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetCompressedTextureImage(UInt32 texture, Int32 level, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetCompressedTextureImage(texture, level, bufSize, pixels);
+            Delegates.glGetCompressedTextureImage(texture, level, bufSize, out pixels);
         }
 
         /// <summary>
@@ -6138,9 +6138,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the texture subimage. Should be a pointer to an array of the type specified by type.
         /// </param>
-        public static void GetCompressedTextureSubImage(UInt32 texture, Int32 level, Int32 xoffset, Int32 yoffset, Int32 zoffset, Int32 width, Int32 height, Int32 depth, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetCompressedTextureSubImage(UInt32 texture, Int32 level, Int32 xoffset, Int32 yoffset, Int32 zoffset, Int32 width, Int32 height, Int32 depth, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels);
+            Delegates.glGetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, out pixels);
         }
 
         /// <summary>
@@ -6217,9 +6217,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of parameter pname for attachment.
         /// </param>
-        public static void GetFramebufferAttachmentParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetFramebufferAttachmentParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params)
         {
-            Delegates.glGetFramebufferAttachmentParameteriv(target, attachment, pname, @params);
+            Delegates.glGetFramebufferAttachmentParameteriv(target, attachment, pname, out @params);
         }
 
         /// <summary>
@@ -6241,9 +6241,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of parameter pname for attachment.
         /// </param>
-        public static void GetNamedFramebufferAttachmentParameteriv(UInt32 framebuffer, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetNamedFramebufferAttachmentParameteriv(UInt32 framebuffer, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params)
         {
-            Delegates.glGetNamedFramebufferAttachmentParameteriv(framebuffer, attachment, pname, @params);
+            Delegates.glGetNamedFramebufferAttachmentParameteriv(framebuffer, attachment, pname, out @params);
         }
 
         /// <summary>
@@ -6262,9 +6262,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of parameter pname for the framebuffer object.
         /// </param>
-        public static void GetFramebufferParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferPName pname, [OutAttribute] Int32[] @params)
+        public static void GetFramebufferParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferPName pname, out Int32 @params)
         {
-            Delegates.glGetFramebufferParameteriv(target, pname, @params);
+            Delegates.glGetFramebufferParameteriv(target, pname, out @params);
         }
 
         /// <summary>
@@ -6282,9 +6282,9 @@ namespace OpenGL
         /// </param>
         /// <param name="param">
         /// </param>
-        public static void GetNamedFramebufferParameteriv(UInt32 framebuffer, OpenGL.FramebufferPName pname, [OutAttribute] Int32[] param)
+        public static void GetNamedFramebufferParameteriv(UInt32 framebuffer, OpenGL.FramebufferPName pname, out Int32 param)
         {
-            Delegates.glGetNamedFramebufferParameteriv(framebuffer, pname, param);
+            Delegates.glGetNamedFramebufferParameteriv(framebuffer, pname, out param);
         }
 
         /// <summary>
@@ -6328,9 +6328,9 @@ namespace OpenGL
         /// <param name="params">
         /// Specifies the address of a variable into which to write the retrieved information.
         /// </param>
-        public static void GetInternalformativ(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, [OutAttribute] Int32[] @params)
+        public static void GetInternalformativ(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, out Int32[] @params)
         {
-            Delegates.glGetInternalformativ(target, internalFormat, pname, bufSize, @params);
+            Delegates.glGetInternalformativ(target, internalFormat, pname, bufSize, out @params);
         }
 
         /// <summary>
@@ -6362,9 +6362,9 @@ namespace OpenGL
         /// <param name="params">
         /// Specifies the address of a variable into which to write the retrieved information.
         /// </param>
-        public static void GetInternalformati64v(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, [OutAttribute] Int64[] @params)
+        public static void GetInternalformati64v(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, out Int64[] @params)
         {
-            Delegates.glGetInternalformati64v(target, internalFormat, pname, bufSize, @params);
+            Delegates.glGetInternalformati64v(target, internalFormat, pname, bufSize, out @params);
         }
 
         /// <summary>
@@ -6387,9 +6387,9 @@ namespace OpenGL
         /// <param name="val">
         /// Specifies the address of an array to receive the position of the sample.
         /// </param>
-        public static void GetMultisamplefv(OpenGL.GetMultisamplePName pname, UInt32 index, [OutAttribute] Single[] val)
+        public static void GetMultisamplefv(OpenGL.GetMultisamplePName pname, UInt32 index, out Single[] val)
         {
-            Delegates.glGetMultisamplefv(pname, index, val);
+            Delegates.glGetMultisamplefv(pname, index, out val);
         }
 
         /// <summary>
@@ -6418,9 +6418,9 @@ namespace OpenGL
         /// <param name="label">
         /// The address of a string that will receive the object label.
         /// </param>
-        public static void GetObjectLabel(OpenGL.ObjectLabel identifier, UInt32 name, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder label)
+        public static void GetObjectLabel(OpenGL.ObjectLabel identifier, UInt32 name, Int32 bufSize, ref Int32 length, out String label)
         {
-            Delegates.glGetObjectLabel(identifier, name, bufSize, length, label);
+            Delegates.glGetObjectLabel(identifier, name, bufSize, ref length, out label);
         }
 
         /// <summary>
@@ -6441,9 +6441,9 @@ namespace OpenGL
         /// <param name="label">
         /// The address of a string that will receive the object label.
         /// </param>
-        public static void GetObjectPtrLabel([OutAttribute] IntPtr ptr, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder label)
+        public static void GetObjectPtrLabel(ref IntPtr ptr, Int32 bufSize, ref Int32 length, out String label)
         {
-            Delegates.glGetObjectPtrLabel(ptr, bufSize, length, label);
+            Delegates.glGetObjectPtrLabel(ref ptr, bufSize, ref length, out label);
         }
 
         /// <summary>
@@ -6461,9 +6461,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the pointer value specified by pname.
         /// </param>
-        public static void GetPointerv(OpenGL.GetPointerParameter pname, [OutAttribute] IntPtr @params)
+        public static void GetPointerv(OpenGL.GetPointerParameter pname, out IntPtr @params)
         {
-            Delegates.glGetPointerv(pname, @params);
+            Delegates.glGetPointerv(pname, out @params);
         }
 
         /// <summary>
@@ -6488,9 +6488,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested object parameter.
         /// </param>
-        public static void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, ref Int32 @params)
         {
-            Delegates.glGetProgramiv(program, pname, @params);
+            Delegates.glGetProgramiv(program, pname, ref @params);
         }
 
         /// <summary>
@@ -6520,9 +6520,9 @@ namespace OpenGL
         /// <param name="binary">
         /// Specifies the address an array into which the GL will return program's binary representation.
         /// </param>
-        public static void GetProgramBinary(UInt32 program, Int32 bufsize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] binaryFormat, [OutAttribute] IntPtr binary)
+        public static void GetProgramBinary(UInt32 program, Int32 bufsize, ref Int32 length, ref Int32 binaryFormat, out IntPtr binary)
         {
-            Delegates.glGetProgramBinary(program, bufsize, length, binaryFormat, binary);
+            Delegates.glGetProgramBinary(program, bufsize, ref length, ref binaryFormat, out binary);
         }
 
         /// <summary>
@@ -6545,9 +6545,9 @@ namespace OpenGL
         /// <param name="infoLog">
         /// Specifies an array of characters that is used to return the information log.
         /// </param>
-        public static void GetProgramInfoLog(UInt32 program, Int32 maxLength, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder infoLog)
+        public static void GetProgramInfoLog(UInt32 program, Int32 maxLength, ref Int32 length, out String infoLog)
         {
-            Delegates.glGetProgramInfoLog(program, maxLength, length, infoLog);
+            Delegates.glGetProgramInfoLog(program, maxLength, ref length, out infoLog);
         }
 
         /// <summary>
@@ -6569,9 +6569,9 @@ namespace OpenGL
         /// <param name="params">
         /// The address of a variable to retrieve the value of pname for the program interface.
         /// </param>
-        public static void GetProgramInterfaceiv(UInt32 program, OpenGL.ProgramInterface programInterface, OpenGL.ProgramInterfaceParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetProgramInterfaceiv(UInt32 program, OpenGL.ProgramInterface programInterface, OpenGL.ProgramInterfaceParameterName pname, out Int32 @params)
         {
-            Delegates.glGetProgramInterfaceiv(program, programInterface, pname, @params);
+            Delegates.glGetProgramInterfaceiv(program, programInterface, pname, out @params);
         }
 
         /// <summary>
@@ -6592,9 +6592,9 @@ namespace OpenGL
         /// Specifies the address of a variable into which will be written the value or values of pname for
         /// pipeline.
         /// </param>
-        public static void GetProgramPipelineiv(UInt32 pipeline, Int32 pname, [OutAttribute] Int32[] @params)
+        public static void GetProgramPipelineiv(UInt32 pipeline, Int32 pname, ref Int32 @params)
         {
-            Delegates.glGetProgramPipelineiv(pipeline, pname, @params);
+            Delegates.glGetProgramPipelineiv(pipeline, pname, ref @params);
         }
 
         /// <summary>
@@ -6622,9 +6622,9 @@ namespace OpenGL
         /// Specifies the address of an array of characters into which will be written the info log for
         /// pipeline.
         /// </param>
-        public static void GetProgramPipelineInfoLog(UInt32 pipeline, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder infoLog)
+        public static void GetProgramPipelineInfoLog(UInt32 pipeline, Int32 bufSize, ref Int32 length, out String infoLog)
         {
-            Delegates.glGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
+            Delegates.glGetProgramPipelineInfoLog(pipeline, bufSize, ref length, out infoLog);
         }
 
         /// <summary>
@@ -6656,9 +6656,9 @@ namespace OpenGL
         /// </param>
         /// <param name="params">
         /// </param>
-        public static void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, [OutAttribute] OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] @params)
+        public static void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, ref OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, out Int32[] @params)
         {
-            Delegates.glGetProgramResourceiv(program, programInterface, index, propCount, props, bufSize, length, @params);
+            Delegates.glGetProgramResourceiv(program, programInterface, index, propCount, ref props, bufSize, ref length, out @params);
         }
 
         /// <summary>
@@ -6755,9 +6755,9 @@ namespace OpenGL
         /// <param name="name">
         /// The address of a character array into which will be written the name of the resource.
         /// </param>
-        public static void GetProgramResourceName(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetProgramResourceName(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 bufSize, ref Int32 length, out String name)
         {
-            Delegates.glGetProgramResourceName(program, programInterface, index, bufSize, length, name);
+            Delegates.glGetProgramResourceName(program, programInterface, index, bufSize, ref length, out name);
         }
 
         /// <summary>
@@ -6785,9 +6785,9 @@ namespace OpenGL
         /// <param name="values">
         /// Specifies the address of a variable into which the queried value or values will be placed.
         /// </param>
-        public static void GetProgramStageiv(UInt32 program, OpenGL.ShaderType shadertype, OpenGL.ProgramStageParameterName pname, [OutAttribute] Int32[] values)
+        public static void GetProgramStageiv(UInt32 program, OpenGL.ShaderType shadertype, OpenGL.ProgramStageParameterName pname, out Int32 values)
         {
-            Delegates.glGetProgramStageiv(program, shadertype, pname, values);
+            Delegates.glGetProgramStageiv(program, shadertype, pname, out values);
         }
 
         /// <summary>
@@ -6813,9 +6813,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetQueryIndexediv(OpenGL.QueryTarget target, UInt32 index, OpenGL.GetQueryParam pname, [OutAttribute] Int32[] @params)
+        public static void GetQueryIndexediv(OpenGL.QueryTarget target, UInt32 index, OpenGL.GetQueryParam pname, out Int32 @params)
         {
-            Delegates.glGetQueryIndexediv(target, index, pname, @params);
+            Delegates.glGetQueryIndexediv(target, index, pname, out @params);
         }
 
         /// <summary>
@@ -6836,9 +6836,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetQueryiv(OpenGL.QueryTarget target, OpenGL.GetQueryParam pname, [OutAttribute] Int32[] @params)
+        public static void GetQueryiv(OpenGL.QueryTarget target, OpenGL.GetQueryParam pname, ref Int32 @params)
         {
-            Delegates.glGetQueryiv(target, pname, @params);
+            Delegates.glGetQueryiv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -6860,9 +6860,9 @@ namespace OpenGL
         /// to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to
         /// receive the resulting data.
         /// </param>
-        public static void GetQueryObjectiv(UInt32 id, OpenGL.GetQueryObjectParam pname, [OutAttribute] Int32[] @params)
+        public static void GetQueryObjectiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int32 @params)
         {
-            Delegates.glGetQueryObjectiv(id, pname, @params);
+            Delegates.glGetQueryObjectiv(id, pname, ref @params);
         }
 
         /// <summary>
@@ -6884,9 +6884,9 @@ namespace OpenGL
         /// to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to
         /// receive the resulting data.
         /// </param>
-        public static void GetQueryObjectuiv(UInt32 id, OpenGL.GetQueryObjectParam pname, [OutAttribute] UInt32[] @params)
+        public static void GetQueryObjectuiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt32 @params)
         {
-            Delegates.glGetQueryObjectuiv(id, pname, @params);
+            Delegates.glGetQueryObjectuiv(id, pname, ref @params);
         }
 
         /// <summary>
@@ -6908,9 +6908,9 @@ namespace OpenGL
         /// to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to
         /// receive the resulting data.
         /// </param>
-        public static void GetQueryObjecti64v(UInt32 id, OpenGL.GetQueryObjectParam pname, [OutAttribute] Int64[] @params)
+        public static void GetQueryObjecti64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int64 @params)
         {
-            Delegates.glGetQueryObjecti64v(id, pname, @params);
+            Delegates.glGetQueryObjecti64v(id, pname, ref @params);
         }
 
         /// <summary>
@@ -6932,9 +6932,9 @@ namespace OpenGL
         /// to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to
         /// receive the resulting data.
         /// </param>
-        public static void GetQueryObjectui64v(UInt32 id, OpenGL.GetQueryObjectParam pname, [OutAttribute] UInt64[] @params)
+        public static void GetQueryObjectui64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt64 @params)
         {
-            Delegates.glGetQueryObjectui64v(id, pname, @params);
+            Delegates.glGetQueryObjectui64v(id, pname, ref @params);
         }
 
         /// <summary>
@@ -6954,9 +6954,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of parameter pname for the renderbuffer object.
         /// </param>
-        public static void GetRenderbufferParameteriv(OpenGL.RenderbufferTarget target, OpenGL.RenderbufferParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetRenderbufferParameteriv(OpenGL.RenderbufferTarget target, OpenGL.RenderbufferParameterName pname, ref Int32 @params)
         {
-            Delegates.glGetRenderbufferParameteriv(target, pname, @params);
+            Delegates.glGetRenderbufferParameteriv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -6975,9 +6975,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of parameter pname for the renderbuffer object.
         /// </param>
-        public static void GetNamedRenderbufferParameteriv(UInt32 renderbuffer, OpenGL.RenderbufferParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetNamedRenderbufferParameteriv(UInt32 renderbuffer, OpenGL.RenderbufferParameterName pname, ref Int32 @params)
         {
-            Delegates.glGetNamedRenderbufferParameteriv(renderbuffer, pname, @params);
+            Delegates.glGetNamedRenderbufferParameteriv(renderbuffer, pname, ref @params);
         }
 
         /// <summary>
@@ -7001,9 +7001,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the sampler parameters.
         /// </param>
-        public static void GetSamplerParameterfv(UInt32 sampler, OpenGL.TextureParameterName pname, [OutAttribute] Single[] @params)
+        public static void GetSamplerParameterfv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Single @params)
         {
-            Delegates.glGetSamplerParameterfv(sampler, pname, @params);
+            Delegates.glGetSamplerParameterfv(sampler, pname, ref @params);
         }
 
         /// <summary>
@@ -7027,9 +7027,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the sampler parameters.
         /// </param>
-        public static void GetSamplerParameteriv(UInt32 sampler, OpenGL.TextureParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetSamplerParameteriv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params)
         {
-            Delegates.glGetSamplerParameteriv(sampler, pname, @params);
+            Delegates.glGetSamplerParameteriv(sampler, pname, ref @params);
         }
 
         /// <summary>
@@ -7053,9 +7053,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the sampler parameters.
         /// </param>
-        public static void GetSamplerParameterIiv(UInt32 sampler, OpenGL.TextureParameterName pname, [OutAttribute] Int32[] @params)
+        public static void GetSamplerParameterIiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params)
         {
-            Delegates.glGetSamplerParameterIiv(sampler, pname, @params);
+            Delegates.glGetSamplerParameterIiv(sampler, pname, ref @params);
         }
 
         /// <summary>
@@ -7079,9 +7079,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the sampler parameters.
         /// </param>
-        public static void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, [OutAttribute] UInt32[] @params)
+        public static void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref UInt32 @params)
         {
-            Delegates.glGetSamplerParameterIuiv(sampler, pname, @params);
+            Delegates.glGetSamplerParameterIuiv(sampler, pname, ref @params);
         }
 
         /// <summary>
@@ -7101,9 +7101,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested object parameter.
         /// </param>
-        public static void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, ref Int32 @params)
         {
-            Delegates.glGetShaderiv(shader, pname, @params);
+            Delegates.glGetShaderiv(shader, pname, ref @params);
         }
 
         /// <summary>
@@ -7126,9 +7126,9 @@ namespace OpenGL
         /// <param name="infoLog">
         /// Specifies an array of characters that is used to return the information log.
         /// </param>
-        public static void GetShaderInfoLog(UInt32 shader, Int32 maxLength, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder infoLog)
+        public static void GetShaderInfoLog(UInt32 shader, Int32 maxLength, ref Int32 length, out String infoLog)
         {
-            Delegates.glGetShaderInfoLog(shader, maxLength, length, infoLog);
+            Delegates.glGetShaderInfoLog(shader, maxLength, ref length, out infoLog);
         }
 
         /// <summary>
@@ -7157,9 +7157,9 @@ namespace OpenGL
         /// Specifies the address of an integer into which the numeric precision of the implementation is
         /// written.
         /// </param>
-        public static void GetShaderPrecisionFormat(OpenGL.ShaderType shaderType, Int32 precisionType, [OutAttribute] Int32[] range, [OutAttribute] Int32[] precision)
+        public static void GetShaderPrecisionFormat(OpenGL.ShaderType shaderType, Int32 precisionType, ref Int32[] range, out Int32 precision)
         {
-            Delegates.glGetShaderPrecisionFormat(shaderType, precisionType, range, precision);
+            Delegates.glGetShaderPrecisionFormat(shaderType, precisionType, out range, out precision);
         }
 
         /// <summary>
@@ -7182,9 +7182,9 @@ namespace OpenGL
         /// <param name="source">
         /// Specifies an array of characters that is used to return the source code string.
         /// </param>
-        public static void GetShaderSource(UInt32 shader, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] System.Text.StringBuilder source)
+        public static void GetShaderSource(UInt32 shader, Int32 bufSize, ref Int32 length, out String source)
         {
-            Delegates.glGetShaderSource(shader, bufSize, length, source);
+            Delegates.glGetShaderSource(shader, bufSize, ref length, out source);
         }
 
         /// <summary>
@@ -7293,9 +7293,9 @@ namespace OpenGL
         /// <param name="values">
         /// Specifies the address of an array to receive the values of the queried parameter.
         /// </param>
-        public static void GetSynciv(IntPtr sync, OpenGL.ArbSync pname, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] values)
+        public static void GetSynciv(IntPtr sync, OpenGL.ArbSync pname, Int32 bufSize, ref Int32 length, out Int32[] values)
         {
-            Delegates.glGetSynciv(sync, pname, bufSize, length, values);
+            Delegates.glGetSynciv(sync, pname, bufSize, ref length, out values);
         }
 
         /// <summary>
@@ -7345,9 +7345,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the texture image. Should be a pointer to an array of the type specified by type.
         /// </param>
-        public static void GetTexImage(OpenGL.TextureTarget target, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, [OutAttribute] IntPtr pixels)
+        public static void GetTexImage(OpenGL.TextureTarget target, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, out IntPtr pixels)
         {
-            Delegates.glGetTexImage(target, level, format, type, pixels);
+            Delegates.glGetTexImage(target, level, format, type, out pixels);
         }
 
         /// <summary>
@@ -7400,9 +7400,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the texture image. Should be a pointer to an array of the type specified by type.
         /// </param>
-        public static void GetnTexImage(OpenGL.TextureTarget target, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetnTexImage(OpenGL.TextureTarget target, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetnTexImage(target, level, format, type, bufSize, pixels);
+            Delegates.glGetnTexImage(target, level, format, type, bufSize, out pixels);
         }
 
         /// <summary>
@@ -7451,9 +7451,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the texture image. Should be a pointer to an array of the type specified by type.
         /// </param>
-        public static void GetTextureImage(UInt32 texture, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetTextureImage(UInt32 texture, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetTextureImage(texture, level, format, type, bufSize, pixels);
+            Delegates.glGetTextureImage(texture, level, format, type, bufSize, out pixels);
         }
 
         /// <summary>
@@ -7493,9 +7493,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetTexLevelParameterfv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, [OutAttribute] Single[] @params)
+        public static void GetTexLevelParameterfv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Single @params)
         {
-            Delegates.glGetTexLevelParameterfv(target, level, pname, @params);
+            Delegates.glGetTexLevelParameterfv(target, level, pname, ref @params);
         }
 
         /// <summary>
@@ -7535,9 +7535,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetTexLevelParameteriv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTexLevelParameteriv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTexLevelParameteriv(target, level, pname, @params);
+            Delegates.glGetTexLevelParameteriv(target, level, pname, ref @params);
         }
 
         /// <summary>
@@ -7570,9 +7570,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetTextureLevelParameterfv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, [OutAttribute] Single[] @params)
+        public static void GetTextureLevelParameterfv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Single @params)
         {
-            Delegates.glGetTextureLevelParameterfv(texture, level, pname, @params);
+            Delegates.glGetTextureLevelParameterfv(texture, level, pname, ref @params);
         }
 
         /// <summary>
@@ -7605,9 +7605,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetTextureLevelParameteriv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTextureLevelParameteriv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTextureLevelParameteriv(texture, level, pname, @params);
+            Delegates.glGetTextureLevelParameteriv(texture, level, pname, ref @params);
         }
 
         /// <summary>
@@ -7644,9 +7644,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTexParameterfv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, [OutAttribute] Single[] @params)
+        public static void GetTexParameterfv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Single @params)
         {
-            Delegates.glGetTexParameterfv(target, pname, @params);
+            Delegates.glGetTexParameterfv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -7683,9 +7683,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTexParameteriv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTexParameteriv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTexParameteriv(target, pname, @params);
+            Delegates.glGetTexParameteriv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -7722,9 +7722,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTexParameterIiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTexParameterIiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTexParameterIiv(target, pname, @params);
+            Delegates.glGetTexParameterIiv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -7761,9 +7761,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTexParameterIuiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, [OutAttribute] UInt32[] @params)
+        public static void GetTexParameterIuiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref UInt32 @params)
         {
-            Delegates.glGetTexParameterIuiv(target, pname, @params);
+            Delegates.glGetTexParameterIuiv(target, pname, ref @params);
         }
 
         /// <summary>
@@ -7797,9 +7797,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTextureParameterfv(UInt32 texture, OpenGL.GetTextureParameter pname, [OutAttribute] Single[] @params)
+        public static void GetTextureParameterfv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Single @params)
         {
-            Delegates.glGetTextureParameterfv(texture, pname, @params);
+            Delegates.glGetTextureParameterfv(texture, pname, ref @params);
         }
 
         /// <summary>
@@ -7833,9 +7833,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTextureParameteriv(UInt32 texture, OpenGL.GetTextureParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTextureParameteriv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTextureParameteriv(texture, pname, @params);
+            Delegates.glGetTextureParameteriv(texture, pname, ref @params);
         }
 
         /// <summary>
@@ -7869,9 +7869,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTextureParameterIiv(UInt32 texture, OpenGL.GetTextureParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetTextureParameterIiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params)
         {
-            Delegates.glGetTextureParameterIiv(texture, pname, @params);
+            Delegates.glGetTextureParameterIiv(texture, pname, ref @params);
         }
 
         /// <summary>
@@ -7905,9 +7905,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the texture parameters.
         /// </param>
-        public static void GetTextureParameterIuiv(UInt32 texture, OpenGL.GetTextureParameter pname, [OutAttribute] UInt32[] @params)
+        public static void GetTextureParameterIuiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref UInt32 @params)
         {
-            Delegates.glGetTextureParameterIuiv(texture, pname, @params);
+            Delegates.glGetTextureParameterIuiv(texture, pname, ref @params);
         }
 
         /// <summary>
@@ -7961,9 +7961,9 @@ namespace OpenGL
         /// <param name="pixels">
         /// Returns the texture subimage. Should be a pointer to an array of the type specified by type.
         /// </param>
-        public static void GetTextureSubImage(UInt32 texture, Int32 level, Int32 xoffset, Int32 yoffset, Int32 zoffset, Int32 width, Int32 height, Int32 depth, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, [OutAttribute] IntPtr pixels)
+        public static void GetTextureSubImage(UInt32 texture, Int32 level, Int32 xoffset, Int32 yoffset, Int32 zoffset, Int32 width, Int32 height, Int32 depth, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, out IntPtr pixels)
         {
-            Delegates.glGetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels);
+            Delegates.glGetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, out pixels);
         }
 
         /// <summary>
@@ -7991,42 +7991,9 @@ namespace OpenGL
         /// <param name="param">
         /// The address of a buffer into which will be written the requested state information.
         /// </param>
-        public static void GetTransformFeedbackiv(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, [OutAttribute] Int32[] param)
+        public static void GetTransformFeedbackiv(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, ref Int32 param)
         {
-            Delegates.glGetTransformFeedbackiv(xfb, pname, param);
-        }
-
-        /// <summary>
-        /// Query the state of a transform feedback object.
-        /// <para>
-        /// In order to use the Transform Feedback functionality, you need to configure the Transform Feedback
-        /// Buffer indexed bindings. This can be achieved by either using glBindBufferBase or glBindBuffersBase
-        /// to associate whole buffer object storage to one of the Transform Feedback Binding Points, or by
-        /// calling glBindBufferRange or glBindBuffersRange to use a region of a buffer object storage for the
-        /// binding. You may want to (but are not required to) bind a Transform Feedback Object first, in order
-        /// to cache the binding configuration. This usually allows you to restore the Transform Feedback
-        /// configuration faster, than if you were to execute a list of API calls necessary to set up the
-        /// Transform Feedback state of your liking.
-        /// </para>
-        /// </summary>
-        /// <param name="xfb">
-        /// The name of an existing transform feedback object, or zero for the default transform feedback
-        /// object.
-        /// </param>
-        /// <param name="pname">
-        /// Property to use for the query. Must be one of the values: GL_TRANSFORM_FEEDBACK_BUFFER_BINDING,
-        /// GL_TRANSFORM_FEEDBACK_BUFFER_START, GL_TRANSFORM_FEEDBACK_BUFFER_SIZE, GL_TRANSFORM_FEEDBACK_PAUSED,
-        /// GL_TRANSFORM_FEEDBACK_ACTIVE.
-        /// </param>
-        /// <param name="index">
-        /// Index of the transform feedback stream (for indexed state).
-        /// </param>
-        /// <param name="param">
-        /// The address of a buffer into which will be written the requested state information.
-        /// </param>
-        public static void GetTransformFeedbacki_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, [OutAttribute] Int32[] param)
-        {
-            Delegates.glGetTransformFeedbacki_v(xfb, pname, index, param);
+            Delegates.glGetTransformFeedbackiv(xfb, pname, ref param);
         }
 
         /// <summary>
@@ -8057,9 +8024,42 @@ namespace OpenGL
         /// <param name="param">
         /// The address of a buffer into which will be written the requested state information.
         /// </param>
-        public static void GetTransformFeedbacki64_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, [OutAttribute] Int64[] param)
+        public static void GetTransformFeedbacki_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int32 param)
         {
-            Delegates.glGetTransformFeedbacki64_v(xfb, pname, index, param);
+            Delegates.glGetTransformFeedbacki_v(xfb, pname, index, ref param);
+        }
+
+        /// <summary>
+        /// Query the state of a transform feedback object.
+        /// <para>
+        /// In order to use the Transform Feedback functionality, you need to configure the Transform Feedback
+        /// Buffer indexed bindings. This can be achieved by either using glBindBufferBase or glBindBuffersBase
+        /// to associate whole buffer object storage to one of the Transform Feedback Binding Points, or by
+        /// calling glBindBufferRange or glBindBuffersRange to use a region of a buffer object storage for the
+        /// binding. You may want to (but are not required to) bind a Transform Feedback Object first, in order
+        /// to cache the binding configuration. This usually allows you to restore the Transform Feedback
+        /// configuration faster, than if you were to execute a list of API calls necessary to set up the
+        /// Transform Feedback state of your liking.
+        /// </para>
+        /// </summary>
+        /// <param name="xfb">
+        /// The name of an existing transform feedback object, or zero for the default transform feedback
+        /// object.
+        /// </param>
+        /// <param name="pname">
+        /// Property to use for the query. Must be one of the values: GL_TRANSFORM_FEEDBACK_BUFFER_BINDING,
+        /// GL_TRANSFORM_FEEDBACK_BUFFER_START, GL_TRANSFORM_FEEDBACK_BUFFER_SIZE, GL_TRANSFORM_FEEDBACK_PAUSED,
+        /// GL_TRANSFORM_FEEDBACK_ACTIVE.
+        /// </param>
+        /// <param name="index">
+        /// Index of the transform feedback stream (for indexed state).
+        /// </param>
+        /// <param name="param">
+        /// The address of a buffer into which will be written the requested state information.
+        /// </param>
+        public static void GetTransformFeedbacki64_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int64 param)
+        {
+            Delegates.glGetTransformFeedbacki64_v(xfb, pname, index, ref param);
         }
 
         /// <summary>
@@ -8095,9 +8095,9 @@ namespace OpenGL
         /// <param name="name">
         /// The address of a buffer into which will be written the name of the varying.
         /// </param>
-        public static void GetTransformFeedbackVarying(UInt32 program, UInt32 index, Int32 bufSize, [OutAttribute] Int32[] length, [OutAttribute] Int32[] size, [OutAttribute] OpenGL.ActiveAttribType[] type, [OutAttribute] System.Text.StringBuilder name)
+        public static void GetTransformFeedbackVarying(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, out String name)
         {
-            Delegates.glGetTransformFeedbackVarying(program, index, bufSize, length, size, type, name);
+            Delegates.glGetTransformFeedbackVarying(program, index, bufSize, ref length, ref size, ref type, out name);
         }
 
         /// <summary>
@@ -8123,9 +8123,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetUniformfv(UInt32 program, Int32 location, [OutAttribute] Single[] @params)
+        public static void GetUniformfv(UInt32 program, Int32 location, ref Single @params)
         {
-            Delegates.glGetUniformfv(program, location, @params);
+            Delegates.glGetUniformfv(program, location, ref @params);
         }
 
         /// <summary>
@@ -8151,9 +8151,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetUniformiv(UInt32 program, Int32 location, [OutAttribute] Int32[] @params)
+        public static void GetUniformiv(UInt32 program, Int32 location, ref Int32 @params)
         {
-            Delegates.glGetUniformiv(program, location, @params);
+            Delegates.glGetUniformiv(program, location, ref @params);
         }
 
         /// <summary>
@@ -8179,9 +8179,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetUniformuiv(UInt32 program, Int32 location, [OutAttribute] UInt32[] @params)
+        public static void GetUniformuiv(UInt32 program, Int32 location, ref UInt32 @params)
         {
-            Delegates.glGetUniformuiv(program, location, @params);
+            Delegates.glGetUniformuiv(program, location, ref @params);
         }
 
         /// <summary>
@@ -8207,40 +8207,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetUniformdv(UInt32 program, Int32 location, [OutAttribute] Double[] @params)
+        public static void GetUniformdv(UInt32 program, Int32 location, ref Double @params)
         {
-            Delegates.glGetUniformdv(program, location, @params);
-        }
-
-        /// <summary>
-        /// Returns the value of a uniform variable.
-        /// <para>
-        /// glGetUniform and glGetnUniform return in params the value(s) of the specified uniform variable. The
-        /// type of the uniform variable specified by location determines the number of values returned. If the
-        /// uniform variable is defined in the shader as a boolean, int, or float, a single value will be
-        /// returned. If it is defined as a vec2, ivec2, or bvec2, two values will be returned. If it is defined
-        /// as a vec3, ivec3, or bvec3, three values will be returned, and so on. To query values stored in
-        /// uniform variables declared as arrays, call glGetUniform for each element of the array. To query
-        /// values stored in uniform variables declared as structures, call glGetUniform for each field in the
-        /// structure. The values for uniform variables declared as a matrix will be returned in column major
-        /// order.
-        /// </para>
-        /// </summary>
-        /// <param name="program">
-        /// Specifies the program object to be queried.
-        /// </param>
-        /// <param name="location">
-        /// Specifies the location of the uniform variable to be queried.
-        /// </param>
-        /// <param name="bufSize">
-        /// Specifies the size of the buffer params.
-        /// </param>
-        /// <param name="params">
-        /// Returns the value of the specified uniform variable.
-        /// </param>
-        public static void GetnUniformfv(UInt32 program, Int32 location, Int32 bufSize, [OutAttribute] Single[] @params)
-        {
-            Delegates.glGetnUniformfv(program, location, bufSize, @params);
+            Delegates.glGetUniformdv(program, location, ref @params);
         }
 
         /// <summary>
@@ -8269,9 +8238,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetnUniformiv(UInt32 program, Int32 location, Int32 bufSize, [OutAttribute] Int32[] @params)
+        public static void GetnUniformfv(UInt32 program, Int32 location, Int32 bufSize, out Single[] @params)
         {
-            Delegates.glGetnUniformiv(program, location, bufSize, @params);
+            Delegates.glGetnUniformfv(program, location, bufSize, out @params);
         }
 
         /// <summary>
@@ -8300,9 +8269,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetnUniformuiv(UInt32 program, Int32 location, Int32 bufSize, [OutAttribute] UInt32[] @params)
+        public static void GetnUniformiv(UInt32 program, Int32 location, Int32 bufSize, out Int32[] @params)
         {
-            Delegates.glGetnUniformuiv(program, location, bufSize, @params);
+            Delegates.glGetnUniformiv(program, location, bufSize, out @params);
         }
 
         /// <summary>
@@ -8331,9 +8300,40 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the value of the specified uniform variable.
         /// </param>
-        public static void GetnUniformdv(UInt32 program, Int32 location, Int32 bufSize, [OutAttribute] Double[] @params)
+        public static void GetnUniformuiv(UInt32 program, Int32 location, Int32 bufSize, out UInt32[] @params)
         {
-            Delegates.glGetnUniformdv(program, location, bufSize, @params);
+            Delegates.glGetnUniformuiv(program, location, bufSize, out @params);
+        }
+
+        /// <summary>
+        /// Returns the value of a uniform variable.
+        /// <para>
+        /// glGetUniform and glGetnUniform return in params the value(s) of the specified uniform variable. The
+        /// type of the uniform variable specified by location determines the number of values returned. If the
+        /// uniform variable is defined in the shader as a boolean, int, or float, a single value will be
+        /// returned. If it is defined as a vec2, ivec2, or bvec2, two values will be returned. If it is defined
+        /// as a vec3, ivec3, or bvec3, three values will be returned, and so on. To query values stored in
+        /// uniform variables declared as arrays, call glGetUniform for each element of the array. To query
+        /// values stored in uniform variables declared as structures, call glGetUniform for each field in the
+        /// structure. The values for uniform variables declared as a matrix will be returned in column major
+        /// order.
+        /// </para>
+        /// </summary>
+        /// <param name="program">
+        /// Specifies the program object to be queried.
+        /// </param>
+        /// <param name="location">
+        /// Specifies the location of the uniform variable to be queried.
+        /// </param>
+        /// <param name="bufSize">
+        /// Specifies the size of the buffer params.
+        /// </param>
+        /// <param name="params">
+        /// Returns the value of the specified uniform variable.
+        /// </param>
+        public static void GetnUniformdv(UInt32 program, Int32 location, Int32 bufSize, out Double[] @params)
+        {
+            Delegates.glGetnUniformdv(program, location, bufSize, out @params);
         }
 
         /// <summary>
@@ -8374,9 +8374,9 @@ namespace OpenGL
         /// <param name="uniformIndices">
         /// Specifies the address of an array that will receive the indices of the uniforms.
         /// </param>
-        public static void GetUniformIndices(UInt32 program, Int32 uniformCount, String uniformNames, [OutAttribute] UInt32[] uniformIndices)
+        public static void GetUniformIndices(UInt32 program, Int32 uniformCount, String uniformNames, out UInt32[] uniformIndices)
         {
-            Delegates.glGetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
+            Delegates.glGetUniformIndices(program, uniformCount, uniformNames, out uniformIndices);
         }
 
         /// <summary>
@@ -8422,9 +8422,9 @@ namespace OpenGL
         /// <param name="values">
         /// Specifies the address of a variable to receive the value or values of the subroutine uniform.
         /// </param>
-        public static void GetUniformSubroutineuiv(OpenGL.ShaderType shadertype, Int32 location, [OutAttribute] UInt32[] values)
+        public static void GetUniformSubroutineuiv(OpenGL.ShaderType shadertype, Int32 location, ref UInt32 values)
         {
-            Delegates.glGetUniformSubroutineuiv(shadertype, location, values);
+            Delegates.glGetUniformSubroutineuiv(shadertype, location, ref values);
         }
 
         /// <summary>
@@ -8454,9 +8454,9 @@ namespace OpenGL
         /// <param name="param">
         /// Returns the requested value.
         /// </param>
-        public static void GetVertexArrayIndexed64iv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int64[] param)
+        public static void GetVertexArrayIndexed64iv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int64 param)
         {
-            Delegates.glGetVertexArrayIndexed64iv(vaobj, index, pname, param);
+            Delegates.glGetVertexArrayIndexed64iv(vaobj, index, pname, ref param);
         }
 
         /// <summary>
@@ -8486,9 +8486,9 @@ namespace OpenGL
         /// <param name="param">
         /// Returns the requested value.
         /// </param>
-        public static void GetVertexArrayIndexediv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] param)
+        public static void GetVertexArrayIndexediv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 param)
         {
-            Delegates.glGetVertexArrayIndexediv(vaobj, index, pname, param);
+            Delegates.glGetVertexArrayIndexediv(vaobj, index, pname, ref param);
         }
 
         /// <summary>
@@ -8508,9 +8508,9 @@ namespace OpenGL
         /// <param name="param">
         /// Returns the requested value.
         /// </param>
-        public static void GetVertexArrayiv(UInt32 vaobj, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] param)
+        public static void GetVertexArrayiv(UInt32 vaobj, OpenGL.VertexAttribParameter pname, ref Int32 param)
         {
-            Delegates.glGetVertexArrayiv(vaobj, pname, param);
+            Delegates.glGetVertexArrayiv(vaobj, pname, ref param);
         }
 
         /// <summary>
@@ -8533,9 +8533,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribdv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Double[] @params)
+        public static void GetVertexAttribdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params)
         {
-            Delegates.glGetVertexAttribdv(index, pname, @params);
+            Delegates.glGetVertexAttribdv(index, pname, ref @params);
         }
 
         /// <summary>
@@ -8558,10 +8558,10 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribdv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Double[] @params)
+        public static void GetVertexAttribdv(Int32 index, OpenGL.VertexAttribParameter pname, ref Double @params)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribdv((UInt32)index, pname, @params);
+            Delegates.glGetVertexAttribdv((UInt32)index, pname, ref @params);
         }
 
         /// <summary>
@@ -8584,9 +8584,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribfv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Single[] @params)
+        public static void GetVertexAttribfv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Single @params)
         {
-            Delegates.glGetVertexAttribfv(index, pname, @params);
+            Delegates.glGetVertexAttribfv(index, pname, ref @params);
         }
 
         /// <summary>
@@ -8609,61 +8609,10 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribfv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Single[] @params)
-        {
-            if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribfv((UInt32)index, pname, @params);
-        }
-
-        /// <summary>
-        /// Return a generic vertex attribute parameter.
-        /// <para>
-        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
-        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
-        /// by pname.
-        /// </para>
-        /// </summary>
-        /// <param name="index">
-        /// Specifies the generic vertex attribute parameter to be queried.
-        /// </param>
-        /// <param name="pname">
-        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
-        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
-        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
-        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
-        /// </param>
-        /// <param name="params">
-        /// Returns the requested data.
-        /// </param>
-        public static void GetVertexAttribiv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] @params)
-        {
-            Delegates.glGetVertexAttribiv(index, pname, @params);
-        }
-
-        /// <summary>
-        /// Return a generic vertex attribute parameter.
-        /// <para>
-        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
-        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
-        /// by pname.
-        /// </para>
-        /// </summary>
-        /// <param name="index">
-        /// Specifies the generic vertex attribute parameter to be queried.
-        /// </param>
-        /// <param name="pname">
-        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
-        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
-        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
-        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
-        /// </param>
-        /// <param name="params">
-        /// Returns the requested data.
-        /// </param>
-        public static void GetVertexAttribiv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetVertexAttribfv(Int32 index, OpenGL.VertexAttribParameter pname, ref Single @params)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribiv((UInt32)index, pname, @params);
+            Delegates.glGetVertexAttribfv((UInt32)index, pname, ref @params);
         }
 
         /// <summary>
@@ -8686,9 +8635,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribIiv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] @params)
+        public static void GetVertexAttribiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params)
         {
-            Delegates.glGetVertexAttribIiv(index, pname, @params);
+            Delegates.glGetVertexAttribiv(index, pname, ref @params);
         }
 
         /// <summary>
@@ -8711,61 +8660,10 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribIiv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Int32[] @params)
-        {
-            if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribIiv((UInt32)index, pname, @params);
-        }
-
-        /// <summary>
-        /// Return a generic vertex attribute parameter.
-        /// <para>
-        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
-        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
-        /// by pname.
-        /// </para>
-        /// </summary>
-        /// <param name="index">
-        /// Specifies the generic vertex attribute parameter to be queried.
-        /// </param>
-        /// <param name="pname">
-        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
-        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
-        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
-        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
-        /// </param>
-        /// <param name="params">
-        /// Returns the requested data.
-        /// </param>
-        public static void GetVertexAttribIuiv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] UInt32[] @params)
-        {
-            Delegates.glGetVertexAttribIuiv(index, pname, @params);
-        }
-
-        /// <summary>
-        /// Return a generic vertex attribute parameter.
-        /// <para>
-        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
-        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
-        /// by pname.
-        /// </para>
-        /// </summary>
-        /// <param name="index">
-        /// Specifies the generic vertex attribute parameter to be queried.
-        /// </param>
-        /// <param name="pname">
-        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
-        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
-        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
-        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
-        /// </param>
-        /// <param name="params">
-        /// Returns the requested data.
-        /// </param>
-        public static void GetVertexAttribIuiv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] UInt32[] @params)
+        public static void GetVertexAttribiv(Int32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribIuiv((UInt32)index, pname, @params);
+            Delegates.glGetVertexAttribiv((UInt32)index, pname, ref @params);
         }
 
         /// <summary>
@@ -8788,9 +8686,9 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribLdv(UInt32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Double[] @params)
+        public static void GetVertexAttribIiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params)
         {
-            Delegates.glGetVertexAttribLdv(index, pname, @params);
+            Delegates.glGetVertexAttribIiv(index, pname, ref @params);
         }
 
         /// <summary>
@@ -8813,10 +8711,112 @@ namespace OpenGL
         /// <param name="params">
         /// Returns the requested data.
         /// </param>
-        public static void GetVertexAttribLdv(Int32 index, OpenGL.VertexAttribParameter pname, [OutAttribute] Double[] @params)
+        public static void GetVertexAttribIiv(Int32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribLdv((UInt32)index, pname, @params);
+            Delegates.glGetVertexAttribIiv((UInt32)index, pname, ref @params);
+        }
+
+        /// <summary>
+        /// Return a generic vertex attribute parameter.
+        /// <para>
+        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
+        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
+        /// by pname.
+        /// </para>
+        /// </summary>
+        /// <param name="index">
+        /// Specifies the generic vertex attribute parameter to be queried.
+        /// </param>
+        /// <param name="pname">
+        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
+        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
+        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
+        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
+        /// </param>
+        /// <param name="params">
+        /// Returns the requested data.
+        /// </param>
+        public static void GetVertexAttribIuiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref UInt32 @params)
+        {
+            Delegates.glGetVertexAttribIuiv(index, pname, ref @params);
+        }
+
+        /// <summary>
+        /// Return a generic vertex attribute parameter.
+        /// <para>
+        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
+        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
+        /// by pname.
+        /// </para>
+        /// </summary>
+        /// <param name="index">
+        /// Specifies the generic vertex attribute parameter to be queried.
+        /// </param>
+        /// <param name="pname">
+        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
+        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
+        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
+        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
+        /// </param>
+        /// <param name="params">
+        /// Returns the requested data.
+        /// </param>
+        public static void GetVertexAttribIuiv(Int32 index, OpenGL.VertexAttribParameter pname, ref UInt32 @params)
+        {
+            if (index < 0) throw new ArgumentOutOfRangeException("index");
+            Delegates.glGetVertexAttribIuiv((UInt32)index, pname, ref @params);
+        }
+
+        /// <summary>
+        /// Return a generic vertex attribute parameter.
+        /// <para>
+        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
+        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
+        /// by pname.
+        /// </para>
+        /// </summary>
+        /// <param name="index">
+        /// Specifies the generic vertex attribute parameter to be queried.
+        /// </param>
+        /// <param name="pname">
+        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
+        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
+        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
+        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
+        /// </param>
+        /// <param name="params">
+        /// Returns the requested data.
+        /// </param>
+        public static void GetVertexAttribLdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params)
+        {
+            Delegates.glGetVertexAttribLdv(index, pname, ref @params);
+        }
+
+        /// <summary>
+        /// Return a generic vertex attribute parameter.
+        /// <para>
+        /// glGetVertexAttrib returns in params the value of a generic vertex attribute parameter. The generic
+        /// vertex attribute to be queried is specified by index, and the parameter to be queried is specified
+        /// by pname.
+        /// </para>
+        /// </summary>
+        /// <param name="index">
+        /// Specifies the generic vertex attribute parameter to be queried.
+        /// </param>
+        /// <param name="pname">
+        /// Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are
+        /// GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE,
+        /// GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
+        /// GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, or GL_CURRENT_VERTEX_ATTRIB.
+        /// </param>
+        /// <param name="params">
+        /// Returns the requested data.
+        /// </param>
+        public static void GetVertexAttribLdv(Int32 index, OpenGL.VertexAttribParameter pname, ref Double @params)
+        {
+            if (index < 0) throw new ArgumentOutOfRangeException("index");
+            Delegates.glGetVertexAttribLdv((UInt32)index, pname, ref @params);
         }
 
         /// <summary>
@@ -8837,9 +8837,9 @@ namespace OpenGL
         /// <param name="pointer">
         /// Returns the pointer value.
         /// </param>
-        public static void GetVertexAttribPointerv(UInt32 index, OpenGL.VertexAttribPointerParameter pname, [OutAttribute] IntPtr pointer)
+        public static void GetVertexAttribPointerv(UInt32 index, OpenGL.VertexAttribPointerParameter pname, out IntPtr pointer)
         {
-            Delegates.glGetVertexAttribPointerv(index, pname, pointer);
+            Delegates.glGetVertexAttribPointerv(index, pname, out pointer);
         }
 
         /// <summary>
@@ -8860,10 +8860,10 @@ namespace OpenGL
         /// <param name="pointer">
         /// Returns the pointer value.
         /// </param>
-        public static void GetVertexAttribPointerv(Int32 index, OpenGL.VertexAttribPointerParameter pname, [OutAttribute] IntPtr pointer)
+        public static void GetVertexAttribPointerv(Int32 index, OpenGL.VertexAttribPointerParameter pname, out IntPtr pointer)
         {
             if (index < 0) throw new ArgumentOutOfRangeException("index");
-            Delegates.glGetVertexAttribPointerv((UInt32)index, pname, pointer);
+            Delegates.glGetVertexAttribPointerv((UInt32)index, pname, out pointer);
         }
 
         /// <summary>
@@ -9039,7 +9039,7 @@ namespace OpenGL
         /// Invalidate the entirety a texture image.
         /// <para>
         /// glInvalidateTexSubImage invalidates all of a texture image. texture and level indicated which
-        /// texture image is being invalidated. After this command, data in the texture image has undefined
+        /// texture image is being invalidated. After this command, out data in the texture image has undefined
         /// values.
         /// </para>
         /// </summary>
@@ -9058,7 +9058,7 @@ namespace OpenGL
         /// Invalidate a region of a texture image.
         /// <para>
         /// glInvalidateTexSubImage invalidates all or part of a texture image. texture and level indicated
-        /// which texture image is being invalidated. After this command, data in that subregion have undefined
+        /// which texture image is being invalidated. After this command, out data in that subregion have undefined
         /// values. xoffset, yoffset, zoffset, width, height, and depth are interpreted as they are in
         /// glTexSubImage3D. For texture targets that don't have certain dimensions, this command treats those
         /// dimensions as having a size of 1. For example, to invalidate a portion of a two- dimensional
@@ -9785,7 +9785,7 @@ namespace OpenGL
         /// glPatchParameter specifies the parameters that will be used for patch primitives. pname specifies
         /// the parameter to modify and must be either GL_PATCH_VERTICES, GL_PATCH_DEFAULT_OUTER_LEVEL or
         /// GL_PATCH_DEFAULT_INNER_LEVEL. For glPatchParameteri, value specifies the new value for the parameter
-        /// specified by pname. For glPatchParameterfv, values specifies the address of an array containing the
+        /// specified by pname. For glPatchParameterfv, out values specifies the address of an array containing the
         /// new values for the parameter specified by pname.
         /// </para>
         /// </summary>
@@ -9807,7 +9807,7 @@ namespace OpenGL
         /// glPatchParameter specifies the parameters that will be used for patch primitives. pname specifies
         /// the parameter to modify and must be either GL_PATCH_VERTICES, GL_PATCH_DEFAULT_OUTER_LEVEL or
         /// GL_PATCH_DEFAULT_INNER_LEVEL. For glPatchParameteri, value specifies the new value for the parameter
-        /// specified by pname. For glPatchParameterfv, values specifies the address of an array containing the
+        /// specified by pname. For glPatchParameterfv, out values specifies the address of an array containing the
         /// new values for the parameter specified by pname.
         /// </para>
         /// </summary>

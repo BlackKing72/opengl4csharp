@@ -181,9 +181,9 @@ namespace OpenGL
         /// Returns the sampler parameters.
         /// </param>
         [Obsolete("GetSamplerParameterfv(UInt32, Int32, Int32[]) is deprecated, please use GetSamplerParameterfv(UInt32, TextureParameterName, Single[]) instead.")]
-        public static void GetSamplerParameterfv(UInt32 sampler, Int32 pname, [OutAttribute] Single[] @params)
+        public static void GetSamplerParameterfv(UInt32 sampler, Int32 pname, ref Single @params)
         {
-            Delegates.glGetSamplerParameterfv(sampler, (OpenGL.TextureParameterName)pname, @params);
+            Delegates.glGetSamplerParameterfv(sampler, (OpenGL.TextureParameterName)pname, ref @params);
         }
 
         /// <summary>
@@ -208,9 +208,9 @@ namespace OpenGL
         /// Returns the sampler parameters.
         /// </param>
         [Obsolete("GetSamplerParameteriv(UInt32, Int32, Int32[]) is deprecated, please use GetSamplerParameteriv(UInt32, TextureParameterName, Int32[]) instead.")]
-        public static void GetSamplerParameteriv(UInt32 sampler, Int32 pname, [OutAttribute] Int32[] @params)
+        public static void GetSamplerParameteriv(UInt32 sampler, Int32 pname, ref Int32 @params)
         {
-            Delegates.glGetSamplerParameteriv(sampler, (OpenGL.TextureParameterName)pname, @params);
+            Delegates.glGetSamplerParameteriv(sampler, (OpenGL.TextureParameterName)pname, ref @params);
         }
 
         /// <summary>
