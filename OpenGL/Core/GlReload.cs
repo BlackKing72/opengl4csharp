@@ -12,8 +12,6 @@ namespace OpenGL
         //internal const string Library = "libGL.so.1";	// linux
         internal const string Library = "opengl32.dll";	// mac os x and windows
 
-        private static Type delegatesClass;
-        private static Type coreClass;
         private static FieldInfo[] delegates;
         #endregion
 
@@ -21,9 +19,7 @@ namespace OpenGL
         static Gl()
         {
             NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), LibraryImporterResolver);
-
-            delegatesClass = typeof(Gl.Delegates);
-            coreClass = typeof(Gl.NativeMethods);
+            
             // 'Touch' Imports class to force initialization. We don't want anything yet, just to have
             // this class ready.
             if (Core.FunctionMap != null) { }
@@ -62,6 +58,7 @@ namespace OpenGL
             {
                 FunctionMap = new SortedList<string, MethodInfo>();
 
+                var coreClass = typeof(Gl.NativeMethods);
                 foreach (var method in coreClass.GetTypeInfo().DeclaredMethods)
                 {
                     if (method.IsStatic) FunctionMap.Add(method.Name, method);
@@ -93,6 +90,7 @@ namespace OpenGL
             if (delegates == null)
             {
                 List<FieldInfo> fields = new List<FieldInfo>();
+                var delegatesClass = typeof(Gl.Delegates);
                 foreach (var field in delegatesClass.GetTypeInfo().DeclaredFields)
                     if (field.IsStatic) fields.Add(field);
                 delegates = fields.ToArray();
@@ -140,6 +138,7 @@ namespace OpenGL
         {
             //FieldInfo f = delegatesClass.GetField(function, BindingFlags.Static | BindingFlags.NonPublic);
             FieldInfo f = null;
+            var delegatesClass = typeof(Gl.Delegates);
             foreach (var field in delegatesClass.GetTypeInfo().DeclaredFields)
             {
                 if (field.Name == function)
@@ -167,6 +166,7 @@ namespace OpenGL
             FieldInfo f = null;
             string function = typeof(T).Name;
 
+            var delegatesClass = typeof(Gl.Delegates);
             foreach (var field in delegatesClass.GetTypeInfo().DeclaredFields)
             {
                 if (field.Name == function)
