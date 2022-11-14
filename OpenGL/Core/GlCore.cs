@@ -367,79 +367,79 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glFrontFace")]
             internal static partial void FrontFace(OpenGL.FrontFaceDirection mode);
             [LibraryImport(Gl.Library, EntryPoint = "glGenBuffers")]
-            internal static partial void GenBuffers(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] buffers);
+            internal static partial void GenBuffers(Int32 n, UInt32[] buffers);
             [LibraryImport(Gl.Library, EntryPoint = "glGenerateMipmap")]
             internal static partial void GenerateMipmap(OpenGL.GenerateMipmapTarget target);
             [LibraryImport(Gl.Library, EntryPoint = "glGenerateTextureMipmap")]
             internal static partial void GenerateTextureMipmap(UInt32 texture);
             [LibraryImport(Gl.Library, EntryPoint = "glGenFramebuffers")]
-            internal static partial void GenFramebuffers(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] ids);
+            internal static partial void GenFramebuffers(Int32 n, UInt32[] ids);
             [LibraryImport(Gl.Library, EntryPoint = "glGenProgramPipelines")]
-            internal static partial void GenProgramPipelines(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] pipelines);
+            internal static partial void GenProgramPipelines(Int32 n, UInt32[] pipelines);
             [LibraryImport(Gl.Library, EntryPoint = "glGenQueries")]
-            internal static partial void GenQueries(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] ids);
+            internal static partial void GenQueries(Int32 n, UInt32[] ids);
             [LibraryImport(Gl.Library, EntryPoint = "glGenRenderbuffers")]
-            internal static partial void GenRenderbuffers(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] renderbuffers);
+            internal static partial void GenRenderbuffers(Int32 n, UInt32[] renderbuffers);
             [LibraryImport(Gl.Library, EntryPoint = "glGenSamplers")]
-            internal static partial void GenSamplers(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] samplers);
+            internal static partial void GenSamplers(Int32 n, UInt32[] samplers);
             [LibraryImport(Gl.Library, EntryPoint = "glGenTextures")]
-            internal static partial void GenTextures(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] textures);
+            internal static partial void GenTextures(Int32 n, UInt32[] textures);
             [LibraryImport(Gl.Library, EntryPoint = "glGenTransformFeedbacks")]
-            internal static partial void GenTransformFeedbacks(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] ids);
+            internal static partial void GenTransformFeedbacks(Int32 n, UInt32[] ids);
             [LibraryImport(Gl.Library, EntryPoint = "glGenVertexArrays")]
-            internal static partial void GenVertexArrays(Int32 n, [MarshalUsing(CountElementName = "n")] out UInt32[] arrays);
+            internal static partial void GenVertexArrays(Int32 n, UInt32[] arrays);
             [LibraryImport(Gl.Library, EntryPoint = "glGetBooleanv")]
             internal static partial void GetBooleanv(OpenGL.GetPName pname, [MarshalAs(UnmanagedType.Bool)] ref Boolean data); // out Boolean[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetDoublev")]
-            internal static partial void GetDoublev(OpenGL.GetPName pname, ref Double data); // out Double[] data);
+            internal static partial void GetDoublev(OpenGL.GetPName pname, ref Double data); // Double[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetFloatv")]
-            internal static partial void GetFloatv(OpenGL.GetPName pname, ref Single data); // out Single[] data);
+            internal static partial void GetFloatv(OpenGL.GetPName pname, ref Single data); // Single[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetIntegerv")]
-            internal static partial void GetIntegerv(OpenGL.GetPName pname, ref Int32 data); // out Int32[] data);
+            internal static partial void GetIntegerv(OpenGL.GetPName pname, ref Int32 data); // Int32[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetInteger64v")]
-            internal static partial void GetInteger64v(OpenGL.ArbSync pname, ref Int64 data); // out Int64[] data);
+            internal static partial void GetInteger64v(OpenGL.ArbSync pname, ref Int64 data); // Int64[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetBooleani_v")]
             internal static partial void GetBooleani_v(OpenGL.GetPName target, UInt32 index, [MarshalAs(UnmanagedType.Bool)] ref Boolean data); // out Boolean[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetIntegeri_v")]
-            internal static partial void GetIntegeri_v(OpenGL.GetPName target, UInt32 index, ref Int32 data); // out Int32[] data);
+            internal static partial void GetIntegeri_v(OpenGL.GetPName target, UInt32 index, ref Int32 data); // Int32[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetFloati_v")]
-            internal static partial void GetFloati_v(OpenGL.GetPName target, UInt32 index, ref Single data); // out Single[] data);
+            internal static partial void GetFloati_v(OpenGL.GetPName target, UInt32 index, ref Single data); // Single[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetDoublei_v")]
-            internal static partial void GetDoublei_v(OpenGL.GetPName target, UInt32 index, ref Double data); // out Double[] data);
+            internal static partial void GetDoublei_v(OpenGL.GetPName target, UInt32 index, ref Double data); // Double[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetInteger64i_v")]
-            internal static partial void GetInteger64i_v(OpenGL.GetPName target, UInt32 index, ref Int64 data); // out Int64[] data);
+            internal static partial void GetInteger64i_v(OpenGL.GetPName target, UInt32 index, ref Int64 data); // Int64[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveAtomicCounterBufferiv")]
-            internal static partial void GetActiveAtomicCounterBufferiv(UInt32 program, UInt32 bufferIndex, OpenGL.AtomicCounterParameterName pname, ref Int32 @params); // out Int32[] @params
+            internal static partial void GetActiveAtomicCounterBufferiv(UInt32 program, UInt32 bufferIndex, OpenGL.AtomicCounterParameterName pname, ref Int32 @params); // Int32[] @params
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveAttrib", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveAttrib(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, out String name); // out Int32[] length, out Int32[] size, out OpenGL.ActiveAttribType[] type, out String name);
+            internal static partial void GetActiveAttrib(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, String name); // Int32[] length, Int32[] size, out OpenGL.ActiveAttribType[] type, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveSubroutineName", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveSubroutineName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, out String name); // out Int32[] length, out String name);
+            internal static partial void GetActiveSubroutineName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, String name); // Int32[] length, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveSubroutineUniformiv")]
-            internal static partial void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, OpenGL.SubroutineParameterName pname, ref Int32 values); // out Int32[] values);
+            internal static partial void GetActiveSubroutineUniformiv(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, OpenGL.SubroutineParameterName pname, ref Int32 values); // Int32[] values);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveSubroutineUniformName", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, out String name); // out Int32[] length, out String name);
+            internal static partial void GetActiveSubroutineUniformName(UInt32 program, OpenGL.ShaderType shadertype, UInt32 index, Int32 bufsize, ref Int32 length, String name); // Int32[] length, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveUniform", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveUniform(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveUniformType type, out String name); // out Int32[] length, out Int32[] size, out OpenGL.ActiveUniformType[] type, out String name);
+            internal static partial void GetActiveUniform(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveUniformType type, String name); // Int32[] length, Int32[] size, out OpenGL.ActiveUniformType[] type, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveUniformBlockiv")]
-            internal static partial void GetActiveUniformBlockiv(UInt32 program, UInt32 uniformBlockIndex, OpenGL.ActiveUniformBlockParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetActiveUniformBlockiv(UInt32 program, UInt32 uniformBlockIndex, OpenGL.ActiveUniformBlockParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveUniformBlockName", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveUniformBlockName(UInt32 program, UInt32 uniformBlockIndex, Int32 bufSize, ref Int32 length, out String uniformBlockName); // out Int32[] length, out String uniformBlockName);
+            internal static partial void GetActiveUniformBlockName(UInt32 program, UInt32 uniformBlockIndex, Int32 bufSize, ref Int32 length, String uniformBlockName); // Int32[] length, String uniformBlockName);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveUniformName", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetActiveUniformName(UInt32 program, UInt32 uniformIndex, Int32 bufSize, ref Int32 length, out String uniformName); // out Int32[] length, out String uniformName);
+            internal static partial void GetActiveUniformName(UInt32 program, UInt32 uniformIndex, Int32 bufSize, ref Int32 length, String uniformName); // Int32[] length, String uniformName);
             [LibraryImport(Gl.Library, EntryPoint = "glGetActiveUniformsiv")]
-            internal static partial void GetActiveUniformsiv(UInt32 program, Int32 uniformCount, [MarshalUsing(CountElementName = "uniformCount")] out UInt32[] uniformIndices, OpenGL.ActiveUniformType pname, [MarshalUsing(CountElementName = "uniformCount")] out Int32[] @params);
+            internal static partial void GetActiveUniformsiv(UInt32 program, Int32 uniformCount, UInt32[] uniformIndices, OpenGL.ActiveUniformType pname, Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetAttachedShaders")]
-            internal static partial void GetAttachedShaders(UInt32 program, Int32 maxCount, ref Int32 count, [MarshalUsing(CountElementName = "maxCount")] out UInt32[] shaders); // out Int32[] count, [MarshalUsing(CountElementName = "maxCount")] out UInt32[] shaders);
+            internal static partial void GetAttachedShaders(UInt32 program, Int32 maxCount, ref Int32 count, UInt32[] shaders); // Int32[] count, UInt32[] shaders);
             [LibraryImport(Gl.Library, EntryPoint = "glGetAttribLocation", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial Int32 GetAttribLocation(UInt32 program, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetBufferParameteriv")]
-            internal static partial void GetBufferParameteriv(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int32 data); // out Int32[] data);
+            internal static partial void GetBufferParameteriv(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int32 data); // Int32[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetBufferParameteri64v")]
-            internal static partial void GetBufferParameteri64v(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int64 data); // out Int64[] data);
+            internal static partial void GetBufferParameteri64v(OpenGL.BufferTarget target, OpenGL.BufferParameterName value, out Int64 data); // Int64[] data);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedBufferParameteriv")]
-            internal static partial void GetNamedBufferParameteriv(UInt32 buffer, OpenGL.BufferParameterName pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetNamedBufferParameteriv(UInt32 buffer, OpenGL.BufferParameterName pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedBufferParameteri64v")]
-            internal static partial void GetNamedBufferParameteri64v(UInt32 buffer, OpenGL.BufferParameterName pname, out Int64 @params); // out Int64[] @params);
+            internal static partial void GetNamedBufferParameteri64v(UInt32 buffer, OpenGL.BufferParameterName pname, out Int64 @params); // Int64[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetBufferPointerv")]
             internal static partial void GetBufferPointerv(OpenGL.BufferTarget target, OpenGL.BufferPointer pname, out IntPtr @params); // out IntPtr @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedBufferPointerv")]
@@ -463,41 +463,41 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetFragDataLocation", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial Int32 GetFragDataLocation(UInt32 program, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-            internal static partial void GetFramebufferAttachmentParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetFramebufferAttachmentParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
-            internal static partial void GetNamedFramebufferAttachmentParameteriv(UInt32 framebuffer, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetNamedFramebufferAttachmentParameteriv(UInt32 framebuffer, OpenGL.FramebufferAttachment attachment, OpenGL.FramebufferParameterName pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetFramebufferParameteriv")]
-            internal static partial void GetFramebufferParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferPName pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetFramebufferParameteriv(OpenGL.FramebufferTarget target, OpenGL.FramebufferPName pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedFramebufferParameteriv")]
-            internal static partial void GetNamedFramebufferParameteriv(UInt32 framebuffer, OpenGL.FramebufferPName pname, out Int32 param); // out Int32[] param);
+            internal static partial void GetNamedFramebufferParameteriv(UInt32 framebuffer, OpenGL.FramebufferPName pname, out Int32 param); // Int32[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetGraphicsResetStatus")]
             internal static partial OpenGL.GraphicResetStatus GetGraphicsResetStatus();
             [LibraryImport(Gl.Library, EntryPoint = "glGetInternalformativ")]
-            internal static partial void GetInternalformativ(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out Int32[] @params);
+            internal static partial void GetInternalformativ(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetInternalformati64v")]
-            internal static partial void GetInternalformati64v(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out Int64[] @params);
+            internal static partial void GetInternalformati64v(OpenGL.TextureTarget target, OpenGL.PixelInternalFormat internalFormat, OpenGL.GetPName pname, Int32 bufSize, Int64[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetMultisamplefv")]
-            internal static partial void GetMultisamplefv(OpenGL.GetMultisamplePName pname, UInt32 index, [MarshalUsing(ConstantElementCount = 2)]out Single[] val);
+            internal static partial void GetMultisamplefv(OpenGL.GetMultisamplePName pname, UInt32 index, [MarshalUsing(ConstantElementCount = 2)]Single[] val);
             [LibraryImport(Gl.Library, EntryPoint = "glGetObjectLabel", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetObjectLabel(OpenGL.ObjectLabel identifier, UInt32 name, Int32 bufSize, ref Int32 length, out String label); // out Int32[] length, out String label);
+            internal static partial void GetObjectLabel(OpenGL.ObjectLabel identifier, UInt32 name, Int32 bufSize, ref Int32 length, String label); // Int32[] length, String label);
             [LibraryImport(Gl.Library, EntryPoint = "glGetObjectPtrLabel", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetObjectPtrLabel(ref IntPtr ptr, Int32 bufSize, ref Int32 length, out String label); // out Int32[] length, out String label);
+            internal static partial void GetObjectPtrLabel(ref IntPtr ptr, Int32 bufSize, ref Int32 length, String label); // Int32[] length, String label);
             [LibraryImport(Gl.Library, EntryPoint = "glGetPointerv")]
             internal static partial void GetPointerv(OpenGL.GetPointerParameter pname, out IntPtr @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramiv")]
-            internal static partial void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramBinary")]
-            internal static partial void GetProgramBinary(UInt32 program, Int32 bufsize, ref Int32 length, ref Int32 binaryFormat, out IntPtr binary); // out Int32[] length, out Int32[] binaryFormat, out IntPtr binary);
+            internal static partial void GetProgramBinary(UInt32 program, Int32 bufsize, ref Int32 length, ref Int32 binaryFormat, out IntPtr binary); // Int32[] length, Int32[] binaryFormat, out IntPtr binary);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramInfoLog", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetProgramInfoLog(UInt32 program, Int32 maxLength, ref Int32 length, out String infoLog); // out Int32[] length, out String infoLog);
+            internal static partial void GetProgramInfoLog(UInt32 program, Int32 maxLength, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramInterfaceiv")]
-            internal static partial void GetProgramInterfaceiv(UInt32 program, OpenGL.ProgramInterface programInterface, OpenGL.ProgramInterfaceParameterName pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetProgramInterfaceiv(UInt32 program, OpenGL.ProgramInterface programInterface, OpenGL.ProgramInterfaceParameterName pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramPipelineiv")]
-            internal static partial void GetProgramPipelineiv(UInt32 pipeline, Int32 pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetProgramPipelineiv(UInt32 pipeline, Int32 pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramPipelineInfoLog", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetProgramPipelineInfoLog(UInt32 pipeline, Int32 bufSize, ref Int32 length, out String infoLog); // out Int32[] length, out String infoLog);
+            internal static partial void GetProgramPipelineInfoLog(UInt32 pipeline, Int32 bufSize, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramResourceiv")]
-            internal static partial void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, [MarshalUsing(CountElementName = "propCount")] ref OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, [MarshalUsing(CountElementName = "propCount")] out Int32[] @params); // out Int32[] length, [MarshalUsing(CountElementName = "bufSize")] out Int32[] @params);
+            internal static partial void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, Int32[] @params); // Int32[] length, Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramResourceIndex", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial UInt32 GetProgramResourceIndex(UInt32 program, OpenGL.ProgramInterface programInterface, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramResourceLocation", StringMarshalling = StringMarshalling.Utf8)]
@@ -505,41 +505,41 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramResourceLocationIndex", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial Int32 GetProgramResourceLocationIndex(UInt32 program, OpenGL.ProgramInterface programInterface, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramResourceName", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetProgramResourceName(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 bufSize, ref Int32 length, out String name); // out Int32[] length, out String name);
+            internal static partial void GetProgramResourceName(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 bufSize, ref Int32 length, String name); // Int32[] length, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramStageiv")]
-            internal static partial void GetProgramStageiv(UInt32 program, OpenGL.ShaderType shadertype, OpenGL.ProgramStageParameterName pname, out Int32 values); // out Int32[] values);
+            internal static partial void GetProgramStageiv(UInt32 program, OpenGL.ShaderType shadertype, OpenGL.ProgramStageParameterName pname, out Int32 values); // Int32[] values);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryIndexediv")]
-            internal static partial void GetQueryIndexediv(OpenGL.QueryTarget target, UInt32 index, OpenGL.GetQueryParam pname, out Int32 @params); // out Int32[] @params);
+            internal static partial void GetQueryIndexediv(OpenGL.QueryTarget target, UInt32 index, OpenGL.GetQueryParam pname, out Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryiv")]
-            internal static partial void GetQueryiv(OpenGL.QueryTarget target, OpenGL.GetQueryParam pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetQueryiv(OpenGL.QueryTarget target, OpenGL.GetQueryParam pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryObjectiv")]
-            internal static partial void GetQueryObjectiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetQueryObjectiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryObjectuiv")]
-            internal static partial void GetQueryObjectuiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetQueryObjectuiv(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryObjecti64v")]
-            internal static partial void GetQueryObjecti64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int64 @params); // out Int64[] @params);
+            internal static partial void GetQueryObjecti64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref Int64 @params); // Int64[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetQueryObjectui64v")]
-            internal static partial void GetQueryObjectui64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt64 @params); // out UInt64[] @params);
+            internal static partial void GetQueryObjectui64v(UInt32 id, OpenGL.GetQueryObjectParam pname, ref UInt64 @params); // UInt64[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetRenderbufferParameteriv")]
-            internal static partial void GetRenderbufferParameteriv(OpenGL.RenderbufferTarget target, OpenGL.RenderbufferParameterName pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetRenderbufferParameteriv(OpenGL.RenderbufferTarget target, OpenGL.RenderbufferParameterName pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetNamedRenderbufferParameteriv")]
-            internal static partial void GetNamedRenderbufferParameteriv(UInt32 renderbuffer, OpenGL.RenderbufferParameterName pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetNamedRenderbufferParameteriv(UInt32 renderbuffer, OpenGL.RenderbufferParameterName pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetSamplerParameterfv")]
-            internal static partial void GetSamplerParameterfv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Single @params); // out Single[] @params);
+            internal static partial void GetSamplerParameterfv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetSamplerParameteriv")]
-            internal static partial void GetSamplerParameteriv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetSamplerParameteriv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetSamplerParameterIiv")]
-            internal static partial void GetSamplerParameterIiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetSamplerParameterIiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetSamplerParameterIuiv")]
-            internal static partial void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderiv")]
-            internal static partial void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderInfoLog", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetShaderInfoLog(UInt32 shader, Int32 maxLength, ref Int32 length, out String infoLog); // out Int32[] length, out String infoLog);
+            internal static partial void GetShaderInfoLog(UInt32 shader, Int32 maxLength, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderPrecisionFormat")]
-            internal static partial void GetShaderPrecisionFormat(OpenGL.ShaderType shaderType, Int32 precisionType, [MarshalAs(UnmanagedType.LPArray, SizeConst=2)] out Int32[] range, out Int32 precision); // out Int32[] precision);
+            internal static partial void GetShaderPrecisionFormat(OpenGL.ShaderType shaderType, Int32 precisionType, [MarshalAs(UnmanagedType.LPArray, SizeConst=2)] Int32[] range, out Int32 precision); // Int32[] precision);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderSource", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetShaderSource(UInt32 shader, Int32 bufSize, ref Int32 length, out String source); // out Int32[] length, out String source);
+            internal static partial void GetShaderSource(UInt32 shader, Int32 bufSize, ref Int32 length, String source); // Int32[] length, String source);
             [LibraryImport(Gl.Library, EntryPoint = "glGetString")]
             internal static partial IntPtr GetString(OpenGL.StringName name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetStringi")]
@@ -549,7 +549,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetSubroutineUniformLocation", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial Int32 GetSubroutineUniformLocation(UInt32 program, OpenGL.ShaderType shadertype, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetSynciv")]
-            internal static partial void GetSynciv(IntPtr sync, OpenGL.ArbSync pname, Int32 bufSize, ref Int32 length, [MarshalUsing(CountElementName = "bufSize")] out Int32[] values); // out Int32[] length, [MarshalUsing(CountElementName = "bufSize")] out Int32[] values);
+            internal static partial void GetSynciv(IntPtr sync, OpenGL.ArbSync pname, Int32 bufSize, ref Int32 length, Int32[] values); // Int32[] length, Int32[] values);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexImage")]
             internal static partial void GetTexImage(OpenGL.TextureTarget target, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, out IntPtr pixels);
             [LibraryImport(Gl.Library, EntryPoint = "glGetnTexImage")]
@@ -557,81 +557,81 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureImage")]
             internal static partial void GetTextureImage(UInt32 texture, Int32 level, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, out IntPtr pixels);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexLevelParameterfv")]
-            internal static partial void GetTexLevelParameterfv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Single @params); // out Single[] @params);
+            internal static partial void GetTexLevelParameterfv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexLevelParameteriv")]
-            internal static partial void GetTexLevelParameteriv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetTexLevelParameteriv(OpenGL.GetPName target, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureLevelParameterfv")]
             internal static partial void GetTextureLevelParameterfv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureLevelParameteriv")]
             internal static partial void GetTextureLevelParameteriv(UInt32 texture, Int32 level, OpenGL.GetTextureLevelParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexParameterfv")]
-            internal static partial void GetTexParameterfv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Single @params); // out Single[] @params);
+            internal static partial void GetTexParameterfv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexParameteriv")]
-            internal static partial void GetTexParameteriv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetTexParameteriv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexParameterIiv")]
-            internal static partial void GetTexParameterIiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetTexParameterIiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTexParameterIuiv")]
-            internal static partial void GetTexParameterIuiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetTexParameterIuiv(OpenGL.TextureTarget target, OpenGL.GetTextureParameter pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureParameterfv")]
-            internal static partial void GetTextureParameterfv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Single @params); // out Single[] @params);
+            internal static partial void GetTextureParameterfv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureParameteriv")]
-            internal static partial void GetTextureParameteriv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetTextureParameteriv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureParameterIiv")]
-            internal static partial void GetTextureParameterIiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetTextureParameterIiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureParameterIuiv")]
-            internal static partial void GetTextureParameterIuiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetTextureParameterIuiv(UInt32 texture, OpenGL.GetTextureParameter pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTextureSubImage")]
             internal static partial void GetTextureSubImage(UInt32 texture, Int32 level, Int32 xoffset, Int32 yoffset, Int32 zoffset, Int32 width, Int32 height, Int32 depth, OpenGL.PixelFormat format, OpenGL.PixelType type, Int32 bufSize, out IntPtr pixels);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTransformFeedbackiv")]
-            internal static partial void GetTransformFeedbackiv(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, ref Int32 param); // out Int32[] param);
+            internal static partial void GetTransformFeedbackiv(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, ref Int32 param); // Int32[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTransformFeedbacki_v")]
-            internal static partial void GetTransformFeedbacki_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int32 param); // out Int32[] param);
+            internal static partial void GetTransformFeedbacki_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int32 param); // Int32[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTransformFeedbacki64_v")]
-            internal static partial void GetTransformFeedbacki64_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int64 param); // out Int64[] param);
+            internal static partial void GetTransformFeedbacki64_v(UInt32 xfb, OpenGL.TransformFeedbackParameterName pname, UInt32 index, ref Int64 param); // Int64[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetTransformFeedbackVarying", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetTransformFeedbackVarying(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, out String name); // out Int32[] length, out Int32[] size, out OpenGL.ActiveAttribType[] type, out String name);
+            internal static partial void GetTransformFeedbackVarying(UInt32 program, UInt32 index, Int32 bufSize, ref Int32 length, ref Int32 size, ref OpenGL.ActiveAttribType type, String name); // Int32[] length, Int32[] size, out OpenGL.ActiveAttribType[] type, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformfv")]
-            internal static partial void GetUniformfv(UInt32 program, Int32 location, ref Single @params); // out Single[] @params);
+            internal static partial void GetUniformfv(UInt32 program, Int32 location, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformiv")]
-            internal static partial void GetUniformiv(UInt32 program, Int32 location, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetUniformiv(UInt32 program, Int32 location, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformuiv")]
-            internal static partial void GetUniformuiv(UInt32 program, Int32 location, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetUniformuiv(UInt32 program, Int32 location, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformdv")]
-            internal static partial void GetUniformdv(UInt32 program, Int32 location, ref Double @params); // out Double[] @params);
+            internal static partial void GetUniformdv(UInt32 program, Int32 location, ref Double @params); // Double[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetnUniformfv")]
-            internal static partial void GetnUniformfv(UInt32 program, Int32 location, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out Single[] @params);
+            internal static partial void GetnUniformfv(UInt32 program, Int32 location, Int32 bufSize, Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetnUniformiv")]
-            internal static partial void GetnUniformiv(UInt32 program, Int32 location, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out Int32[] @params);
+            internal static partial void GetnUniformiv(UInt32 program, Int32 location, Int32 bufSize, Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetnUniformuiv")]
-            internal static partial void GetnUniformuiv(UInt32 program, Int32 location, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out UInt32[] @params);
+            internal static partial void GetnUniformuiv(UInt32 program, Int32 location, Int32 bufSize, UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetnUniformdv")]
-            internal static partial void GetnUniformdv(UInt32 program, Int32 location, Int32 bufSize, [MarshalUsing(CountElementName = "bufSize")] out Double[] @params);
+            internal static partial void GetnUniformdv(UInt32 program, Int32 location, Int32 bufSize, Double[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformBlockIndex", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial UInt32 GetUniformBlockIndex(UInt32 program, String uniformBlockName);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformIndices", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void GetUniformIndices(UInt32 program, Int32 uniformCount, String uniformNames, [MarshalUsing(CountElementName = "uniformCount")] out UInt32[] uniformIndices);
+            internal static partial void GetUniformIndices(UInt32 program, Int32 uniformCount, String uniformNames, UInt32[] uniformIndices);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformLocation", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial Int32 GetUniformLocation(UInt32 program, String name);
             [LibraryImport(Gl.Library, EntryPoint = "glGetUniformSubroutineuiv")]
-            internal static partial void GetUniformSubroutineuiv(OpenGL.ShaderType shadertype, Int32 location, ref UInt32 values); // out UInt32[] values);
+            internal static partial void GetUniformSubroutineuiv(OpenGL.ShaderType shadertype, Int32 location, ref UInt32 values); // UInt32[] values);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexArrayIndexed64iv")]
-            internal static partial void GetVertexArrayIndexed64iv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int64 param); // out Int64[] param);
+            internal static partial void GetVertexArrayIndexed64iv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int64 param); // Int64[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexArrayIndexediv")]
-            internal static partial void GetVertexArrayIndexediv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 param); // out Int32[] param);
+            internal static partial void GetVertexArrayIndexediv(UInt32 vaobj, UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 param); // Int32[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexArrayiv")]
-            internal static partial void GetVertexArrayiv(UInt32 vaobj, OpenGL.VertexAttribParameter pname, ref Int32 param); // out Int32[] param);
+            internal static partial void GetVertexArrayiv(UInt32 vaobj, OpenGL.VertexAttribParameter pname, ref Int32 param); // Int32[] param);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribdv")]
-            internal static partial void GetVertexAttribdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params); // out Double[] @params);
+            internal static partial void GetVertexAttribdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params); // Double[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribfv")]
-            internal static partial void GetVertexAttribfv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Single @params); // out Single[] @params);
+            internal static partial void GetVertexAttribfv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Single @params); // Single[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribiv")]
-            internal static partial void GetVertexAttribiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetVertexAttribiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribIiv")]
-            internal static partial void GetVertexAttribIiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params); // out Int32[] @params);
+            internal static partial void GetVertexAttribIiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Int32 @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribIuiv")]
-            internal static partial void GetVertexAttribIuiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref UInt32 @params); // out UInt32[] @params);
+            internal static partial void GetVertexAttribIuiv(UInt32 index, OpenGL.VertexAttribParameter pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribLdv")]
-            internal static partial void GetVertexAttribLdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params); // out Double[] @params);
+            internal static partial void GetVertexAttribLdv(UInt32 index, OpenGL.VertexAttribParameter pname, ref Double @params); // Double[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetVertexAttribPointerv")]
             internal static partial void GetVertexAttribPointerv(UInt32 index, OpenGL.VertexAttribPointerParameter pname, out IntPtr pointer);
             [LibraryImport(Gl.Library, EntryPoint = "glHint")]
@@ -641,13 +641,13 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateBufferSubData")]
             internal static partial void InvalidateBufferSubData(UInt32 buffer, IntPtr offset, IntPtr length);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateFramebuffer")]
-            internal static partial void InvalidateFramebuffer(OpenGL.FramebufferTarget target, Int32 numAttachments, [MarshalUsing(CountElementName = "numAttachments")] OpenGL.FramebufferAttachment[] attachments);
+            internal static partial void InvalidateFramebuffer(OpenGL.FramebufferTarget target, Int32 numAttachments, OpenGL.FramebufferAttachment[] attachments);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateNamedFramebufferData")]
-            internal static partial void InvalidateNamedFramebufferData(UInt32 framebuffer, Int32 numAttachments, [MarshalUsing(CountElementName = "numAttachments")] OpenGL.FramebufferAttachment[] attachments);
+            internal static partial void InvalidateNamedFramebufferData(UInt32 framebuffer, Int32 numAttachments, OpenGL.FramebufferAttachment[] attachments);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateSubFramebuffer")]
-            internal static partial void InvalidateSubFramebuffer(OpenGL.FramebufferTarget target, Int32 numAttachments, [MarshalUsing(CountElementName = "numAttachments")] OpenGL.FramebufferAttachment[] attachments, Int32 x, Int32 y, Int32 width, Int32 height);
+            internal static partial void InvalidateSubFramebuffer(OpenGL.FramebufferTarget target, Int32 numAttachments, OpenGL.FramebufferAttachment[] attachments, Int32 x, Int32 y, Int32 width, Int32 height);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateNamedFramebufferSubData")]
-            internal static partial void InvalidateNamedFramebufferSubData(UInt32 framebuffer, Int32 numAttachments, [MarshalUsing(CountElementName = "numAttachments")] OpenGL.FramebufferAttachment[] attachments, Int32 x, Int32 y, Int32 width, Int32 height);
+            internal static partial void InvalidateNamedFramebufferSubData(UInt32 framebuffer, Int32 numAttachments, OpenGL.FramebufferAttachment[] attachments, Int32 x, Int32 y, Int32 width, Int32 height);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateTexImage")]
             internal static partial void InvalidateTexImage(UInt32 texture, Int32 level);
             [LibraryImport(Gl.Library, EntryPoint = "glInvalidateTexSubImage")]
@@ -701,13 +701,13 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glMinSampleShading")]
             internal static partial void MinSampleShading(Single value);
             [LibraryImport(Gl.Library, EntryPoint = "glMultiDrawArrays")]
-            internal static partial void MultiDrawArrays(OpenGL.BeginMode mode, [MarshalUsing(CountElementName = "drawcount")] Int32[] first, [MarshalUsing(CountElementName = "drawcount")] Int32[] count, Int32 drawcount);
+            internal static partial void MultiDrawArrays(OpenGL.BeginMode mode, Int32[] first, Int32[] count, Int32 drawcount);
             [LibraryImport(Gl.Library, EntryPoint = "glMultiDrawArraysIndirect")]
             internal static partial void MultiDrawArraysIndirect(OpenGL.BeginMode mode, IntPtr indirect, Int32 drawcount, Int32 stride);
             [LibraryImport(Gl.Library, EntryPoint = "glMultiDrawElements")]
-            internal static partial void MultiDrawElements(OpenGL.BeginMode mode, [MarshalUsing(CountElementName = "drawcount")] Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 drawcount);
+            internal static partial void MultiDrawElements(OpenGL.BeginMode mode, Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 drawcount);
             [LibraryImport(Gl.Library, EntryPoint = "glMultiDrawElementsBaseVertex")]
-            internal static partial void MultiDrawElementsBaseVertex(OpenGL.BeginMode mode, [MarshalUsing(CountElementName = "drawcount")] Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 drawcount, [MarshalUsing(CountElementName = "drawcount")] Int32[] basevertex);
+            internal static partial void MultiDrawElementsBaseVertex(OpenGL.BeginMode mode, Int32[] count, OpenGL.DrawElementsType type, IntPtr indices, Int32 drawcount, Int32[] basevertex);
             [LibraryImport(Gl.Library, EntryPoint = "glMultiDrawElementsIndirect")]
             internal static partial void MultiDrawElementsIndirect(OpenGL.BeginMode mode, OpenGL.DrawElementsType type, IntPtr indirect, Int32 drawcount, Int32 stride);
             [LibraryImport(Gl.Library, EntryPoint = "glObjectLabel", StringMarshalling = StringMarshalling.Utf8)]
@@ -855,7 +855,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glShaderBinary")]
             internal static partial void ShaderBinary(Int32 count, UInt32[] shaders, Int32 binaryFormat, IntPtr binary, Int32 length);
             [LibraryImport(Gl.Library, EntryPoint = "glShaderSource", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void ShaderSource(UInt32 shader, Int32 count, [MarshalUsing(CountElementName = "count")] String[] @string, [MarshalUsing(CountElementName = "count")] Int32[] length);
+            internal static partial void ShaderSource(UInt32 shader, Int32 count, String[] @string, Int32[] length);
             [LibraryImport(Gl.Library, EntryPoint = "glShaderStorageBlockBinding")]
             internal static partial void ShaderStorageBlockBinding(UInt32 program, UInt32 storageBlockIndex, UInt32 storageBlockBinding);
             [LibraryImport(Gl.Library, EntryPoint = "glStencilFunc")]
@@ -953,7 +953,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glTransformFeedbackBufferRange")]
             internal static partial void TransformFeedbackBufferRange(UInt32 xfb, UInt32 index, UInt32 buffer, IntPtr offset, Int32 size);
             [LibraryImport(Gl.Library, EntryPoint = "glTransformFeedbackVaryings", StringMarshalling = StringMarshalling.Utf8)]
-            internal static partial void TransformFeedbackVaryings(UInt32 program, Int32 count, [MarshalUsing(CountElementName = "count")] String[] varyings, OpenGL.TransformFeedbackMode bufferMode);
+            internal static partial void TransformFeedbackVaryings(UInt32 program, Int32 count, String[] varyings, OpenGL.TransformFeedbackMode bufferMode);
             [LibraryImport(Gl.Library, EntryPoint = "glUniform1f")]
             internal static partial void Uniform1f(Int32 location, Single v0);
             [LibraryImport(Gl.Library, EntryPoint = "glUniform2f")]
@@ -1023,7 +1023,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glUniformBlockBinding")]
             internal static partial void UniformBlockBinding(UInt32 program, UInt32 uniformBlockIndex, UInt32 uniformBlockBinding);
             [LibraryImport(Gl.Library, EntryPoint = "glUniformSubroutinesuiv")]
-            internal static partial void UniformSubroutinesuiv(OpenGL.ShaderType shadertype, Int32 count, [MarshalUsing(CountElementName = "count")] UInt32[] indices);
+            internal static partial void UniformSubroutinesuiv(OpenGL.ShaderType shadertype, Int32 count, UInt32[] indices);
             [LibraryImport(Gl.Library, EntryPoint = "glUnmapBuffer")][return: MarshalAs(UnmanagedType.Bool)]
             internal static partial Boolean UnmapBuffer(OpenGL.BufferTarget target);
             [LibraryImport(Gl.Library, EntryPoint = "glUnmapNamedBuffer")][return: MarshalAs(UnmanagedType.Bool)]
