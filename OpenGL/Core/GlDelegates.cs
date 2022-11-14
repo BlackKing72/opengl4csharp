@@ -486,7 +486,7 @@ namespace OpenGL
             internal static GetObjectPtrLabel glGetObjectPtrLabel;
             internal delegate void GetPointerv(OpenGL.GetPointerParameter pname, out IntPtr @params);
             internal static GetPointerv glGetPointerv;
-            internal delegate void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, ref Int32 @params); // Int32[] @params);
+            internal delegate void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, Int32[] @params);
             internal static GetProgramiv glGetProgramiv;
             internal delegate void GetProgramBinary(UInt32 program, Int32 bufsize, ref Int32 length, ref Int32 binaryFormat, out IntPtr binary); // Int32[] length, Int32[] binaryFormat, out IntPtr binary);
             internal static GetProgramBinary glGetProgramBinary;
@@ -534,7 +534,7 @@ namespace OpenGL
             internal static GetSamplerParameterIiv glGetSamplerParameterIiv;
             internal delegate void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref UInt32 @params); // UInt32[] @params);
             internal static GetSamplerParameterIuiv glGetSamplerParameterIuiv;
-            internal delegate void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, ref Int32 @params); // Int32[] @params);
+            internal delegate void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, Int32[] @params); // Int32[] @params);
             internal static GetShaderiv glGetShaderiv;
             internal delegate void GetShaderInfoLog(UInt32 shader, Int32 maxLength, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             internal static GetShaderInfoLog glGetShaderInfoLog;

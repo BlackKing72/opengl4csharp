@@ -218,7 +218,7 @@ namespace OpenGL
         public static uint GenBuffer()
         {
             uint1[0] = 0;
-            Gl.GenBuffers(1, out uint1);
+            Gl.GenBuffers(1, uint1);
             return uint1[0];
         }
 
@@ -230,7 +230,7 @@ namespace OpenGL
         public static uint GenTexture()
         {
             uint1[0] = 0;
-            Gl.GenTextures(1, out uint1);
+            Gl.GenTextures(1, uint1);
             return uint1[0];
         }
 
@@ -253,7 +253,7 @@ namespace OpenGL
         public static uint GenVertexArray()
         {
             uint1[0] = 0;
-            Gl.GenVertexArrays(1, out uint1);
+            Gl.GenVertexArrays(1, uint1);
             return uint1[0];
         }
 
@@ -276,7 +276,7 @@ namespace OpenGL
         public static uint GenFramebuffer()
         {
             uint1[0] = 0;
-            Gl.GenFramebuffers(1, out uint1);
+            Gl.GenFramebuffers(1, uint1);
             return uint1[0];
         }
 
@@ -299,7 +299,7 @@ namespace OpenGL
         public static uint GenRenderbuffer()
         {
             uint1[0] = 0;
-            Gl.GenRenderbuffers(1, out uint1);
+            Gl.GenRenderbuffers(1, uint1);
             return uint1[0];
         }
 
@@ -311,9 +311,9 @@ namespace OpenGL
         public static bool GetShaderCompileStatus(UInt32 shader)
         {
             const int SUCCESS = 1;
-            int value = 0;
-            Gl.GetShaderiv(shader, ShaderParameter.CompileStatus, ref value);
-            return value == SUCCESS;
+            int1[0] = 0;
+            Gl.GetShaderiv(shader, ShaderParameter.CompileStatus, int1);
+            return int1[0] == SUCCESS;
         }
 
         /// <summary>
@@ -324,9 +324,9 @@ namespace OpenGL
         public static bool GetProgramLinkStatus(UInt32 program)
         {
             const int SUCCESS = 1;
-            int value = 0;
-            Gl.GetProgramiv(program, ProgramParameter.LinkStatus, ref value);
-            return value == SUCCESS;
+            int1[0] = 0;
+            Gl.GetProgramiv(program, ProgramParameter.LinkStatus, int1);
+            return int1[0] == SUCCESS;
         }
 
         /// <summary>
@@ -335,11 +335,11 @@ namespace OpenGL
         /// <param name="program">The ID of the shader program.</param>
         public static string GetProgramInfoLog(UInt32 program)
         {
-            int len = 0;
-            Gl.GetProgramiv(program, ProgramParameter.InfoLogLength, ref len);
-            if (len == 0) return String.Empty;
-            String sb = new String('\0', len);
-            Gl.GetProgramInfoLog(program, len, ref len, out sb);
+            int1[0] = 0;
+            Gl.GetProgramiv(program, ProgramParameter.InfoLogLength, int1);
+            if (int1[0] == 0) return String.Empty;
+            String sb = new String('\0', int1[0]);
+            Gl.GetProgramInfoLog(program, int1[0], ref int1[0], sb);
             return sb;
         }
 
@@ -349,11 +349,11 @@ namespace OpenGL
         /// <param name="shader">The ID of the shader program.</param>
         public static string GetShaderInfoLog(UInt32 shader)
         {
-            int len = 0;
-            Gl.GetShaderiv(shader, ShaderParameter.InfoLogLength, ref len);
-            if (len == 0) return String.Empty;
-            String sb = new String('\0', len);
-            Gl.GetShaderInfoLog(shader, len, ref len, out sb);
+            int1[0] = 0;
+            Gl.GetShaderiv(shader, ShaderParameter.InfoLogLength, int1);
+            if (int1[0] == 0) return String.Empty;
+            String sb = new String('\0', int1[0]);
+            Gl.GetShaderInfoLog(shader, int1[0], ref int1[0], sb);
             return sb;
         }
 

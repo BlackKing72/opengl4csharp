@@ -365,17 +365,17 @@ namespace OpenGL
             if (Gl.GetAddress("glGetProgramInterfaceiv") == IntPtr.Zero)
             {
 #endif
-                int resources = 0;
+                int[] resources = new int[1];
                 int actualLength = 0;
                 int arraySize = 0;
 
-                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveAttributes, ref resources);
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveAttributes, resources);
 
-                for (int i = 0; i < resources; i++)
+                for (int i = 0; i < resources.Length; i++)
                 {
                     ActiveAttribType type = 0;
                     String sb = new String('\0', 256);
-                    Gl.GetActiveAttrib(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, out sb);
+                    Gl.GetActiveAttrib(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, sb);
 
                     if (!shaderParams.ContainsKey(sb))
                     {
@@ -385,13 +385,13 @@ namespace OpenGL
                     }
                 }
 
-                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveUniforms, ref resources);
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveUniforms, resources);
 
-                for (int i = 0; i < resources; i++)
+                for (int i = 0; i < resources.Length; i++)
                 {
                     ActiveUniformType type = 0;
                     String sb = new String('\0', 256);
-                    Gl.GetActiveUniform(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, out sb);
+                    Gl.GetActiveUniform(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, sb);
 
                     if (!shaderParams.ContainsKey(sb))
                     {
@@ -404,14 +404,14 @@ namespace OpenGL
             }
             else
             {
-                int resources = 0;
-                Gl.GetProgramInterfaceiv(ProgramID, ProgramInterface.ProgramInput, ProgramInterfaceParameterName.ActiveResources, out resources);
+                int[] resources = new int[1];
+                Gl.GetProgramInterfaceiv(ProgramID, ProgramInterface.ProgramInput, ProgramInterfaceParameterName.ActiveResources, resources);
 
-                for (int i = 0; i < resources; i++)
+                for (int i = 0; i < resources.Length; i++)
                 {
                     int[] values = new int[2];
                     var props = new ProgramResourceParameterName[2] { ProgramResourceParameterName.NameLength, ProgramResourceParameterName.Type };
-                    Gl.GetProgramResourceiv(ProgramID, ProgramInterface.ProgramInput, (uint)i, 2, ref props, 256, null, out values);
+                    Gl.GetProgramResourceiv(ProgramID, ProgramInterface.ProgramInput, (uint)i, 2, props, 256, null, values);
                     String sb = new String('\0', values[0]);
                     Gl.GetProgramResourceName(ProgramID, ProgramInterface.ProgramInput, (uint)i, values[0], null, sb);
 
@@ -429,7 +429,7 @@ namespace OpenGL
                 {
                     int[] values = new int[2];
                     var props = new ProgramResourceParameterName[2] { ProgramResourceParameterName.NameLength, ProgramResourceParameterName.Type };
-                    Gl.GetProgramResourceiv(ProgramID, ProgramInterface.Uniform, (uint)i, 2, props, 256, null, out values);
+                    Gl.GetProgramResourceiv(ProgramID, ProgramInterface.Uniform, (uint)i, 2, props, 256, null, values);
                     String sb = new String('\0', values[0]);
                     Gl.GetProgramResourceName(ProgramID, ProgramInterface.Uniform, (uint)i, values[0], null, sb);
 

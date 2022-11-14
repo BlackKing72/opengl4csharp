@@ -16,8 +16,7 @@ namespace OpenGL
         /// <summary>
         /// The IDs for each of the renderbuffer attachments.
         /// </summary>
-        public uint[] TextureID { get => textureID; private set => textureID = value; }
-        private uint[] textureID;
+        public uint[] TextureID { get; private set; }
         /// <summary>
         /// The ID for the single depth buffer attachment.
         /// </summary>
@@ -110,7 +109,7 @@ namespace OpenGL
             {
                 // Create n texture buffers (known by the number of attachments)
                 TextureID = new uint[Attachments.Length];
-                Gl.GenTextures(Attachments.Length, out textureID);
+                Gl.GenTextures(Attachments.Length, TextureID);
 
                 // Bind the n texture buffers to the framebuffer
                 for (int i = 0; i < Attachments.Length; i++)

@@ -485,7 +485,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetPointerv")]
             internal static partial void GetPointerv(OpenGL.GetPointerParameter pname, out IntPtr @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramiv")]
-            internal static partial void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, ref Int32 @params); // Int32[] @params);
+            internal static partial void GetProgramiv(UInt32 program, OpenGL.ProgramParameter pname, Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramBinary")]
             internal static partial void GetProgramBinary(UInt32 program, Int32 bufsize, ref Int32 length, ref Int32 binaryFormat, out IntPtr binary); // Int32[] length, Int32[] binaryFormat, out IntPtr binary);
             [LibraryImport(Gl.Library, EntryPoint = "glGetProgramInfoLog", StringMarshalling = StringMarshalling.Utf8)]
@@ -533,7 +533,7 @@ namespace OpenGL
             [LibraryImport(Gl.Library, EntryPoint = "glGetSamplerParameterIuiv")]
             internal static partial void GetSamplerParameterIuiv(UInt32 sampler, OpenGL.TextureParameterName pname, ref UInt32 @params); // UInt32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderiv")]
-            internal static partial void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, ref Int32 @params); // Int32[] @params);
+            internal static partial void GetShaderiv(UInt32 shader, OpenGL.ShaderParameter pname, Int32[] @params); // Int32[] @params);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderInfoLog", StringMarshalling = StringMarshalling.Utf8)]
             internal static partial void GetShaderInfoLog(UInt32 shader, Int32 maxLength, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             [LibraryImport(Gl.Library, EntryPoint = "glGetShaderPrecisionFormat")]
