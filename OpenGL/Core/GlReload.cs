@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Diagnostics.CodeAnalysis;
 
 namespace OpenGL
 {
@@ -26,7 +27,7 @@ namespace OpenGL
             // 'Touch' Imports class to force initialization. We don't want anything yet, just to have
             // this class ready.
             if (Core.FunctionMap != null) { }
-            ReloadFunctions();
+            ReloadDirect(); // ReloadFunctions();
         }
 
         public static IntPtr LibraryImporterResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
@@ -83,6 +84,7 @@ namespace OpenGL
         /// (or do not want) to use the automatic initialization of the GL class.
         /// </para>
         /// </remarks>
+        [RequiresDynamicCode("Use ReloadDirect() intead")]
         public static void ReloadFunctions()
         {
             // Using reflection is more than 3 times faster than directly loading delegates on the first
@@ -102,6 +104,12 @@ namespace OpenGL
                 //if (f.GetValue(null) == null) Console.WriteLine("Failed to load extension {0}.", f.Name);
             }
         }
+
+        public static void ReloadDirect() 
+        {
+            GlReloadDirect.ReloadFunctions();
+        }
+
         #endregion
 
         #region public static bool ReloadFunction(string function)
@@ -127,6 +135,7 @@ namespace OpenGL
         /// To query for supported extensions use the IsExtensionSupported() function instead.
         /// </para>
         /// </remarks>
+        [RequiresDynamicCode("Use Load<T>() intead")]
         public static bool Load(string function)
         {
             //FieldInfo f = delegatesClass.GetField(function, BindingFlags.Static | BindingFlags.NonPublic);
@@ -151,6 +160,36 @@ namespace OpenGL
             }
             return @new != null;
         }
+
+        public static bool Load<T>() where T : Delegate
+        {
+            //FieldInfo f = delegatesClass.GetField(function, BindingFlags.Static | BindingFlags.NonPublic);
+            FieldInfo f = null;
+            string function = typeof(T).Name;
+
+            foreach (var field in delegatesClass.GetTypeInfo().DeclaredFields)
+            {
+                if (field.Name == function)
+                {
+                    f = field;
+                    break;
+                }
+            }
+
+            if (f == null)
+                return false;
+
+            Delegate old = f.GetValue(null) as Delegate;
+            Delegate @new = GetDelegate<T>(f.Name);
+
+            if (old.Target != @new.Target)
+            {
+                f.SetValue(null, @new);
+            }
+
+            return @new != null;
+        }
+
         #endregion
 
         #region public static Delegate GetDelegate(string name, Type signature)
@@ -163,6 +202,7 @@ namespace OpenGL
         /// A System.Delegate that can be used to call this OpenGL function, or null if the specified
         /// function name did not correspond to an OpenGL function.
         /// </returns>
+        [RequiresDynamicCode("Use GetDelegate<T>() intead")]
         public static Delegate GetDelegate(string name, Type signature)
         {
             MethodInfo m;
@@ -170,6 +210,15 @@ namespace OpenGL
                   (Core.FunctionMap.TryGetValue((name.Substring(2)), out m) ?
                    m.CreateDelegate(signature) : null);
         }
+
+        public static T GetDelegate<T>(string name) where T : Delegate
+        {
+            MethodInfo m;
+            return GetExtensionDelegate<T>(name) ??
+                  (Core.FunctionMap.TryGetValue((name.Substring(2)), out m) ?
+                   m.CreateDelegate<T>() : null);
+        }
+        
         #endregion
 
         #region internal static Delegate GetExtensionDelegate(string name, Type signature)
@@ -182,6 +231,7 @@ namespace OpenGL
         /// A System.Delegate that can be used to call this OpenGL function or null
         /// if the function is not available in the current OpenGL context.
         /// </returns>
+        [RequiresDynamicCode("Use GetExtensionDelegate<T>() intead")]
         internal static Delegate GetExtensionDelegate(string name, Type signature)
         {
             IntPtr address = GetAddress(name);
@@ -199,6 +249,23 @@ namespace OpenGL
 #pragma warning restore 0618
             }
         }
+
+        internal static T GetExtensionDelegate<T>(string name) where T : Delegate
+        {
+            IntPtr address = GetAddress(name);
+
+            if (address == IntPtr.Zero ||
+                address == new IntPtr(1) ||     // Workaround for buggy nvidia drivers which return
+                address == new IntPtr(2))       // 1 or 2 instead of IntPtr.Zero for some extensions.
+            {
+                return null;
+            }
+            else
+            {
+                return Marshal.GetDelegateForFunctionPointer<T>(address);
+            }
+        }
+
         #endregion
 
         #region private static IntPtr GetAddress(string function)
