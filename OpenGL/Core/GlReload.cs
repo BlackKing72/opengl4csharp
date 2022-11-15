@@ -271,18 +271,19 @@ namespace OpenGL
         #region private static IntPtr GetAddress(string function)
         internal partial class NativeMethods
         {
-            [DllImport(Library, EntryPoint = "wglGetProcAddress", ExactSpelling = true)]
-            internal static extern IntPtr wglGetProcAddress(string lpszProc);
+            [LibraryImport(Library, EntryPoint = "wglGetProcAddress", StringMarshalling = StringMarshalling.Utf8)]
+            internal static partial IntPtr wglGetProcAddress(string lpszProc);
 
-            [DllImport(Library, EntryPoint = "glXGetProcAddress")]
-            internal static extern IntPtr glxGetProcAddress([MarshalAs(UnmanagedType.LPTStr)] string procName);
+            [LibraryImport(Library, EntryPoint = "glXGetProcAddress", StringMarshalling = StringMarshalling.Utf8)]
+            internal static partial IntPtr glxGetProcAddress(string procName);
 
-            [DllImport("libdl.dylib", EntryPoint = "NSIsSymbolNameDefined")]
-            internal static extern bool NSIsSymbolNameDefined(string s);
-            [DllImport("libdl.dylib", EntryPoint = "NSLookupAndBindSymbol")]
-            internal static extern IntPtr NSLookupAndBindSymbol(string s);
-            [DllImport("libdl.dylib", EntryPoint = "NSAddressOfSymbol")]
-            internal static extern IntPtr NSAddressOfSymbol(IntPtr symbol);
+            [LibraryImport("libdl.dylib", EntryPoint = "NSIsSymbolNameDefined", StringMarshalling = StringMarshalling.Utf8)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            internal static partial bool NSIsSymbolNameDefined(string s);
+            [LibraryImport("libdl.dylib", EntryPoint = "NSLookupAndBindSymbol", StringMarshalling = StringMarshalling.Utf8)]
+            internal static partial IntPtr NSLookupAndBindSymbol(string s);
+            [LibraryImport("libdl.dylib", EntryPoint = "NSAddressOfSymbol")]
+            internal static partial IntPtr NSAddressOfSymbol(IntPtr symbol);
         }
 
         private static IGetProcAddress getProcAddress;
