@@ -498,7 +498,7 @@ namespace OpenGL
             internal static GetProgramPipelineiv glGetProgramPipelineiv;
             internal delegate void GetProgramPipelineInfoLog(UInt32 pipeline, Int32 bufSize, ref Int32 length, String infoLog); // Int32[] length, String infoLog);
             internal static GetProgramPipelineInfoLog glGetProgramPipelineInfoLog;
-            internal delegate void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, ref OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, Int32[] @params); // out OpenGL.ProgramResourceParameterName[] props, Int32[] length, Int32[] @params);
+            internal delegate void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, Int32[] @params); // out OpenGL.ProgramResourceParameterName[] props, Int32[] length, Int32[] @params);
             internal static GetProgramResourceiv glGetProgramResourceiv;
             internal delegate UInt32 GetProgramResourceIndex(UInt32 program, OpenGL.ProgramInterface programInterface, String name);
             internal static GetProgramResourceIndex glGetProgramResourceIndex;

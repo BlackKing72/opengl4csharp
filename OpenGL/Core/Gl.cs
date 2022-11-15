@@ -6657,9 +6657,9 @@ namespace OpenGL
         /// </param>
         /// <param name="params">
         /// </param>
-        public static void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, ref OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, Int32[] @params)
+        public static void GetProgramResourceiv(UInt32 program, OpenGL.ProgramInterface programInterface, UInt32 index, Int32 propCount, OpenGL.ProgramResourceParameterName[] props, Int32 bufSize, ref Int32 length, Int32[] @params)
         {
-            Delegates.glGetProgramResourceiv(program, programInterface, index, propCount, ref props, bufSize, ref length, @params);
+            Delegates.glGetProgramResourceiv(program, programInterface, index, propCount, props, bufSize, ref length, @params);
         }
 
         /// <summary>
