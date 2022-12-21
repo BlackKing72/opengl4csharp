@@ -365,37 +365,40 @@ namespace OpenGL
             if (Gl.GetAddress("glGetProgramInterfaceiv") == IntPtr.Zero)
             {
 #endif
-                int[] resources = new int[1];
+                //int[] resources = new int[1];
                 int actualLength = 0;
                 int arraySize = 0;
 
-                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveAttributes, resources);
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveAttributes, out var resources);
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveAttributeMaxLength, out int len);
 
-                for (int i = 0; i < resources.Length; i++)
+                for (int i = 0; i < resources; i++)
                 {
                     ActiveAttribType type = 0;
-                    String sb = new String('\0', 256);
-                    Gl.GetActiveAttrib(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, sb);
+                    byte[] sb = new byte[len];
+                    Gl.GetActiveAttrib(ProgramID, (uint)0, 256, ref actualLength, ref arraySize, ref type, sb);
 
-                    if (!shaderParams.ContainsKey(sb))
+                    string resourceName = System.Text.Encoding.UTF8.GetString(sb);
+                    if (!shaderParams.ContainsKey(resourceName))
                     {
-                        ProgramParam param = new ProgramParam(TypeFromAttributeType(type), ParamType.Attribute, sb);
+                        ProgramParam param = new ProgramParam(TypeFromAttributeType(type), ParamType.Attribute, resourceName);
                         shaderParams.Add(param.Name, param);
                         param.GetLocation(this);
                     }
                 }
 
-                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveUniforms, resources);
-
-                for (int i = 0; i < resources.Length; i++)
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveUniforms, out resources);
+                Gl.GetProgramiv(ProgramID, ProgramParameter.ActiveUniformMaxLength, out len);
+                for (int i = 0; i < resources; i++)
                 {
-                    ActiveUniformType type = 0;
-                    String sb = new String('\0', 256);
-                    Gl.GetActiveUniform(ProgramID, (uint)i, 256, ref actualLength, ref arraySize, ref type, sb);
+                    ActiveUniformType uniformType = 0;
+                    byte[] sb = new byte[len];
+                    Gl.GetActiveUniform(ProgramID, (uint)0, 256, ref actualLength, ref arraySize, ref uniformType, sb);
 
-                    if (!shaderParams.ContainsKey(sb))
+                    string resourceName = System.Text.Encoding.UTF8.GetString(sb);
+                    if (!shaderParams.ContainsKey(resourceName))
                     {
-                        ProgramParam param = new ProgramParam(TypeFromUniformType(type), ParamType.Uniform, sb);
+                        ProgramParam param = new ProgramParam(TypeFromUniformType(uniformType), ParamType.Uniform, resourceName);
                         shaderParams.Add(param.Name, param);
                         param.GetLocation(this);
                     }
@@ -407,7 +410,7 @@ namespace OpenGL
                 int[] resources = new int[1];
                 Gl.GetProgramInterfaceiv(ProgramID, ProgramInterface.ProgramInput, ProgramInterfaceParameterName.ActiveResources, resources);
 
-                for (int i = 0; i < resources.Length; i++)
+                for (int i = 0; i < resources[0]; i++)
                 {
                     int[] values = new int[2];
                     var props = new ProgramResourceParameterName[2] { ProgramResourceParameterName.NameLength, ProgramResourceParameterName.Type };

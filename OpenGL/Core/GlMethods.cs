@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Runtime.InteropServices;
 
 #if USE_NUMERICS
@@ -325,8 +326,8 @@ namespace OpenGL
         {
             const int SUCCESS = 1;
             int1[0] = 0;
-            Gl.GetProgramiv(program, ProgramParameter.LinkStatus, int1);
-            return int1[0] == SUCCESS;
+            Gl.GetProgramiv(program, ProgramParameter.LinkStatus, out int status);
+            return status == SUCCESS;
         }
 
         /// <summary>
@@ -335,12 +336,14 @@ namespace OpenGL
         /// <param name="program">The ID of the shader program.</param>
         public static string GetProgramInfoLog(UInt32 program)
         {
-            int1[0] = 0;
-            Gl.GetProgramiv(program, ProgramParameter.InfoLogLength, int1);
-            if (int1[0] == 0) return String.Empty;
-            String sb = new String('\0', int1[0]);
-            Gl.GetProgramInfoLog(program, int1[0], ref int1[0], sb);
-            return sb;
+            Gl.GetProgramiv(program, ProgramParameter.InfoLogLength, out int length);
+            
+            if (length == 0) 
+                return String.Empty;
+
+            byte[] infoLog = new byte[length];
+            Gl.GetProgramInfoLog(program, length, ref length, infoLog);
+            return Encoding.UTF8.GetString(infoLog);
         }
 
         /// <summary>
@@ -352,9 +355,9 @@ namespace OpenGL
             int1[0] = 0;
             Gl.GetShaderiv(shader, ShaderParameter.InfoLogLength, int1);
             if (int1[0] == 0) return String.Empty;
-            String sb = new String('\0', int1[0]);
+            byte[] sb = new byte[int1[0]];
             Gl.GetShaderInfoLog(shader, int1[0], ref int1[0], sb);
-            return sb;
+            return Encoding.UTF8.GetString(sb);
         }
 
         /// <summary>
